@@ -47,6 +47,20 @@ uvicorn papermind.api.main:app --reload
 pytest
 ```
 
+## Troubleshooting
+
+**`ModuleNotFoundError: No module named 'papermind'` despite `pip install -e .` succeeding
+(macOS):** macOS occasionally sets the filesystem "hidden" flag on the editable install's
+`.pth` file in `.venv/lib/.../site-packages/_editable_impl_papermind.pth`, which Python's `site`
+module silently skips. Check with `ls -lO` (look for `hidden` in the flags column) and fix with:
+
+```bash
+chflags nohidden .venv/lib/python3.12/site-packages/_editable_impl_papermind.pth
+```
+
+Pytest is unaffected by this (`pythonpath = ["src"]` in `pyproject.toml` sidesteps it), but
+running scripts or `uvicorn` directly can hit it.
+
 ## Status
 
 Project scaffold only — ingestion, chunking, embedding, retrieval, and generation pipelines are
