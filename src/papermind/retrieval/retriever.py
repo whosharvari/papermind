@@ -22,3 +22,7 @@ class Retriever:
         query_vector = self._embedder.embed([query])[0]
         results = self._store.search(query_vector, k=k)
         return [RetrievedChunk(chunk=chunk, score=score) for chunk, score in results]
+
+    @property
+    def indexed_chunk_count(self) -> int:
+        return self._store.index.ntotal
