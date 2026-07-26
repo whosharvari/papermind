@@ -1,122 +1,160 @@
 # Papermind Evaluation Report
 
+**49 question(s) failed with a Groq API error and were excluded from every metric below** (not counted as failures, not counted as successes -- simply absent):
+
+- What is label smoothing and how was it used when training the Transformer?
+- What sub-layers make up each layer of the Transformer's decoder?
+- How is dropout applied during training of the Transformer?
+- What are the two unsupervised pre-training tasks used to train BERT?
+- During BERT pre-training, what fraction of the time is a masked position actually replaced with the [MASK] token?
+- What two text corpora were used to pre-train BERT?
+- How many parameters does BERT-large have?
+- What benchmark dataset is used to evaluate question-answering performance in the BERT paper?
+- What is the main architectural difference between BERT's and OpenAI GPT's self-attention?
+- What GLUE benchmark score does BERT achieve?
+- What is the difference between BERT's masked language model objective and a traditional left-to-right language model?
+- What are the limitations of Chain-of-Thought prompting discussed in the paper that introduced it?
+- How many parameters does the largest GPT-3 model have?
+- What is few-shot learning as described in the GPT-3 paper?
+- What is the maximum context window size, in tokens, that GPT-3 processes?
+- How does GPT-3's approach to few-shot learning differ from traditional fine-tuning?
+- What patch size does the Vision Transformer use to split an input image into a sequence of tokens?
+- What large-scale dataset was the Vision Transformer pre-trained on before evaluation?
+- How does the Vision Transformer's performance compare to convolutional neural networks when trained on smaller datasets?
+- What pre-training objective does CLIP use to align images and text?
+- How many image-text pairs were used to train CLIP?
+- How does CLIP perform zero-shot image classification without task-specific training data?
+- What is the core idea behind LoRA for adapting large language models?
+- Which weight matrices in the Transformer's attention mechanism does LoRA typically adapt?
+- Does LoRA introduce additional inference latency compared to a fully fine-tuned model?
+- What two components make up a Retrieval-Augmented Generation (RAG) model?
+- What retriever architecture does the RAG paper use to fetch supporting documents?
+- What is the difference between the RAG-Sequence and RAG-Token model variants?
+- How is the reward model trained in the human-preference-based reinforcement learning approach described in this paper?
+- What kinds of tasks were used to evaluate this human-feedback-based reinforcement learning approach?
+- What happens during the forward process in a denoising diffusion probabilistic model?
+- What training objective is used to optimize denoising diffusion probabilistic models?
+- What is chain-of-thought prompting?
+- What category of tasks shows the largest improvement from chain-of-thought prompting?
+- At what model scale does chain-of-thought prompting begin to improve performance?
+- What three training stages make up the InstructGPT pipeline?
+- What reinforcement learning algorithm is used to fine-tune InstructGPT against the reward model?
+- How does InstructGPT compare to the base GPT-3 model in human preference evaluations?
+- What claim does the LLaMA paper make about the availability of its training data sources?
+- How many training tokens was LLaMA trained on?
+- What problem do residual connections address in very deep neural networks?
+- What is a shortcut (skip) connection in a residual block?
+- How does LoRA's parameter-efficient fine-tuning approach differ from the full-parameter fine-tuning used to train InstructGPT's supervised policy?
+- How does the retrieval-augmented approach in RAG differ from relying purely on a large pre-trained language model's parametric knowledge, as GPT-3 does?
+- What is the AlphaFold protein structure prediction algorithm?
+- How does federated learning preserve data privacy across distributed devices?
+- What is Transformer-XL's approach to handling context beyond a fixed-length window?
+- What is the Mixture-of-Experts architecture used for scaling neural networks?
+- How does the Word2Vec skip-gram model learn word embeddings?
+
 ## Retrieval quality by top-k
 
-| k | Hit Rate | MRR | n |
-|---|---|---|---|
-| 3 | 1.00 | 0.958 | 16 |
-| 5 | 1.00 | 0.958 | 16 |
-| 8 | 1.00 | 0.958 | 16 |
+n = 49 document-level, 49 page-level, 9 chunk-level (chunk-level ground truth only exists for narrow factual questions)
+
+| k | Doc Hit Rate | Doc MRR | Page Hit Rate | Page MRR | Chunk Hit Rate | Chunk MRR |
+|---|---|---|---|---|---|---|
+| 3 | 0.98 | 0.949 | 0.47 | 0.408 | 0.22 | 0.148 |
+| 5 | 0.98 | 0.949 | 0.61 | 0.440 | 0.22 | 0.148 |
+| 8 | 0.98 | 0.949 | 0.76 | 0.461 | 0.33 | 0.162 |
 
 ## Answer quality & citation correctness (k=5)
 
-- Citation accuracy (source document): 1.00 (18/18)
-- Page-level accuracy (±1 page tolerance): 0.81 (13/16)
+- Citation accuracy (source document): 0.80 (4/5)
+- Page-level accuracy (±1 page tolerance): 0.60 (3/5)
 - Mean groundedness score (1-5, LLM-judged): 5.00
-- False refusals on answerable questions: 2/16
-- Correct refusals on out-of-corpus questions: 2/2
+- False refusals on answerable questions: 3/5
+- Correct refusals on out-of-corpus questions: 0/0
 
 ## Latency (ms, k=5)
 
 | stage | mean | median | p95 |
 |---|---|---|---|
-| retrieval | 132 | 84 | 348 |
-| generation | 3944 | 5492 | 6598 |
-| total | 4077 | 5601 | 6687 |
+| retrieval | 19 | 18 | 20 |
+| generation | 503 | 500 | 554 |
+| total | 522 | 521 | 563 |
 
 ## Per-question results
 
 | question | citation ok | refused | groundedness | total ms |
 |---|---|---|---|---|
-| How many identical layers are stacked in the Transformer's encoder? | ✓ | no | 5 | 452 |
-| What optimizer was used to train the Transformer model? | ✓ | yes | 5 | 431 |
-| How does the Transformer encode information about token position in a sequence? | ✓ | no | 5 | 713 |
-| What tokenization scheme does the Transformer use for its training vocabulary? | ✓ | yes | 5 | 665 |
-| What decoding strategy is used to generate translations at inference time? | ✓ | no | 5 | 991 |
-| What is label smoothing and how was it used when training the Transformer? | ✓ | no | 5 | 768 |
-| What sub-layers make up each layer of the Transformer's decoder? | ✓ | no | 5 | 5925 |
-| How is dropout applied during training of the Transformer? | ✓ | no | 5 | 5938 |
-| What are the two unsupervised pre-training tasks used to train BERT? | ✓ | no | 5 | 3781 |
-| During BERT pre-training, what fraction of the time is a masked position actually replaced with the [MASK] token? | ✓ | no | 5 | 6687 |
-| What two text corpora were used to pre-train BERT? | ✓ | no | 5 | 6183 |
-| How many parameters does BERT-large have? | ✓ | no | 5 | 5686 |
-| What benchmark dataset is used to evaluate question-answering performance in the BERT paper? | ✓ | no | 5 | 6769 |
-| What is the main architectural difference between BERT's and OpenAI GPT's self-attention? | ✓ | no | 5 | 4790 |
-| What GLUE benchmark score does BERT achieve? | ✓ | no | 5 | 5515 |
-| What is the difference between BERT's masked language model objective and a traditional left-to-right language model? | ✓ | no | 5 | 6145 |
-| What are the limitations of Chain-of-Thought prompting? | ✓ | yes | 5 | 5981 |
-| How does Reinforcement Learning from Human Feedback (RLHF) work? | ✓ | yes | 5 | 5963 |
+| How many identical layers are stacked in the Transformer's encoder? | ✓ | no | 5 | 563 |
+| What optimizer was used to train the Transformer model? | ✓ | yes | 5 | 447 |
+| How does the Transformer encode information about token position in a sequence? | ✓ | no | 5 | 647 |
+| What tokenization scheme does the Transformer use for its training vocabulary? | ✗ | yes | 5 | 432 |
+| What decoding strategy is used to generate translations at inference time? | ✓ | yes | 5 | 521 |
 
-## Observed failure modes
+## Why generation-quality numbers above are partial (5/54, not 54/54)
 
-Two genuine failures out of 18 questions, both investigated down to a root cause rather than
-left as unexplained misses:
+Groq's free-tier daily token quota (100,000 tokens/day, shared across this whole project) was
+already mostly spent by Session 5's run plus this session's first attempt, and was fully
+exhausted 5 questions into this session's re-run -- confirmed via the API's own error message
+(`Used 100000, Requested ...`, retry-after climbing back up as old requests slowly age out of
+the quota window, not a fixed midnight reset). This is a hard external constraint, not a bug:
+`run_generation_eval` now isolates failures per-question (see `scripts/evaluate.py` diff --
+mirrors the per-file isolation `scripts/ingest.py` already had), so the 5 questions that *did*
+complete produced a real, valid partial result instead of the whole run being lost, and the 49
+that failed are listed explicitly above rather than silently absent.
 
-**1. Chunk-level retrieval miss, masked by document-level hit rate** ("What optimizer was used
-to train the Transformer model?"). The correct sentence ("We used the Adam optimizer [20] with
-β1 = 0.9...") exists in chunk `attention_is_all_you_need.pdf::0030`, page 7 — but that chunk
-also contains the preceding "5.2 Hardware and Schedule" subsection (GPU count, training step
-timing) crammed in with "5.3 Optimizer" because our chunker splits on token count, not section
-boundaries. Directly measured: this chunk's similarity to the query is 0.349, ranking **19th out
-of 165 chunks** — nowhere near k=5, or even k=8. The topic-mixing diluted the chunk's embedding
-enough to push a genuinely relevant chunk far down the ranking. This is exactly the "context
-dilution" failure mode predicted going into this session, now with a concrete, measured example
-— and it's invisible to our hit-rate metric, which only checks *document*-level presence in the
-top-k (the *document* was trivially found; the specific *chunk* needed for this narrow factual
-question was not).
+**Retrieval-quality numbers are unaffected by this and are complete (49/49)** -- the retrieval
+sweep only calls FAISS locally, never Groq. That's also this session's actual primary goal, so
+the quota exhaustion blocks the secondary analysis, not the main one.
 
-**2. Over-cautious refusal despite adequate context** ("What tokenization scheme does the
-Transformer use?"). The model's retrieved context and even its own answer explicitly named
-"WordPiece tokens" — then refused anyway, saying the excerpts don't "provide details on the
-tokenization scheme itself." The information needed was present and cited; the model was simply
-too conservative in what it considered sufficient. This is the direct flip side of the
-anti-hallucination prompt instruction working as designed — a small amount of over-caution is
-the expected cost of a prompt that deliberately biases toward refusal over fabrication, but a
-2-out-of-16 rate suggests it's currently tuned slightly too conservative.
+The 3/5 false-refusal rate in this partial sample is too small to trust as a system-wide number
+-- it could be real, or it could be within the same refusal-detection-heuristic noise documented
+as a limitation in Session 5. **Recommendation: re-run `scripts/evaluate.py` once the daily quota
+resets to get a trustworthy generation-quality number on the full 54-question set**; the report
+below only draws conclusions from the complete retrieval data, not from this 5-question sample.
 
-## Limitations of this evaluation
+## Analysis: is retrieval evaluation now statistically meaningful?
 
-Being upfront about what today's numbers do and don't prove, rather than overstating them:
+Yes, and the difference from Session 5 is stark. With 2 documents, Hit Rate was flat at 1.00
+across every k and every level. With 13 documents (49 answerable questions), the three
+granularity levels now tell three genuinely different stories:
 
-- **The k-sweep is inconclusive by construction, not because top-k doesn't matter.** With only 2
-  documents indexed, document-level hit rate is already 1.00 at k=3 — there's no headroom left
-  for k=5 or k=8 to improve on. This eval set cannot yet distinguish a good top-k from a great
-  one; it can only confirm retrieval isn't currently broken at the document level. A meaningful
-  k-sweep needs a larger, more confusable corpus (see recommendations).
-- **Latency numbers are inflated by client-side rate-limiting**, not representative of a single
-  query's real latency. Firing 18 back-to-back questions against Groq's free tier triggered
-  automatic retry-with-backoff on roughly half the requests (visible as `Retrying request`
-  messages during the run), which is why median total latency here (~5.6s) is notably higher
-  than the ~2s observed for isolated single queries in Session 4's manual testing. The retrieval
-  stage's own latency (132ms mean) is unaffected and reliable, since it never touches Groq.
-- **A mean groundedness score of exactly 5.00 across all 18 examples, including the two known
-  failures, is itself a finding: the judge lacks discriminative power on this eval set.** The
-  refusal in failure #2 is arguably still "grounded" (it doesn't contradict the excerpts), which
-  is defensible, but a judge that can't distinguish a fully-answered question from an
-  unnecessarily-refused one isn't yet a useful tuning signal. Treat citation accuracy and the
-  manually-inspected failure cases as the reliable signal from today, not the groundedness score.
-- **Citation accuracy (source-document level) is a weak signal on a 2-document corpus** — with
-  only two possible documents, a mediocre retriever could still score close to 1.00 by getting a
-  binary choice right most of the time. Page-level accuracy (0.81) is the more informative number
-  here precisely because it's harder to get right by chance.
+- **Document-level (0.98 flat across k=3/5/8):** still near-ceiling, but no longer *trivially*
+  so -- there's now one real miss out of 49, not a mathematical certainty of zero misses. Flat
+  MRR (0.949) across k confirms the miss isn't a ranking problem within reach of larger k; the
+  right document simply isn't surfacing for that one question, however large k gets within the
+  range tested.
+- **Page-level (0.47 -> 0.61 -> 0.76 across k=3/5/8): this is the informative curve this session
+  was built to produce.** A 29-point Hit Rate improvement from k=3 to k=8 is real, substantial,
+  and monotonic -- exactly the signal Session 5 could not generate with only 2 documents. It says
+  plainly that k=5 (today's default) is leaving real page-level recall on the table.
+- **Chunk-level (0.22 -> 0.22 -> 0.33, n=9):** the smallest, noisiest sample (only 9 questions
+  have single-chunk ground truth, by the design decided at the top of this session), but the
+  absolute numbers are low even at k=8. Combined with page-level hit rate being decent at k=8
+  (0.76) while chunk-level lags well behind (0.33), the gap between "found the right page" and
+  "found the exact right chunk" is itself evidence: pages are being found, but the *specific*
+  chunk within that page is still frequently missed -- consistent with Session 5's chunk-dilution
+  finding (the Adam-optimizer chunk spanning two subsections), now observed again on a much larger
+  and more diverse corpus rather than a single anecdote.
 
-## Recommendations
+## Recommendations (evidence-driven, ranked)
 
-In priority order, each tied to the specific evidence above rather than intuition:
-
-1. **Expand the corpus before doing any further tuning.** Both the k-sweep ceiling effect and the
-   weak document-level citation signal trace back to the same root cause: 2 documents is too few
-   to stress-test retrieval. This should happen before chunk-size or top-k changes, since right
-   now we can't actually measure whether those changes help.
-2. **Chunk on section boundaries where detectable, not pure token count** — directly motivated by
-   the Adam-optimizer failure. arXiv papers reliably number their subsections ("5.2", "5.3"); a
-   cheap improvement is treating a line matching that pattern as a hard split point before the
-   token-based recursive splitter runs, so a chunk never silently spans two subsections. This is
-   a targeted fix for an observed failure, not a speculative resize of chunk_size/overlap.
-3. **Soften the refusal instruction slightly**, informed by the 2/16 false-refusal rate — e.g.
-   explicitly telling the model that a *paraphrase* of relevant terminology found in the excerpts
-   counts as sufficient grounding, not just an exact restatement of the question's phrasing.
-4. **Not recommended right now: changing chunk_size or chunk_overlap globally.** Today's evidence
-   points at a chunking *boundary* problem (recommendation 2), not a chunk *size* problem — there's
-   no evidence in this data that a global resize would fix the optimizer-chunk failure, and
-   changing it blind would be exactly the speculative change this session was scoped to avoid.
+1. **Raise default top-k from 5 to 8 for retrieval.** Directly supported: page-level Hit Rate
+   improves 15 points (0.61 -> 0.76) and chunk-level Hit Rate improves 11 points (0.22 -> 0.33)
+   moving from k=5 to k=8, with no retrieval-side cost (FAISS search over 2,278 vectors is still
+   single-digit milliseconds regardless of k -- see latency table). The only real cost is a longer,
+   slightly more diluted prompt, which is a generation-quality question the partial data above
+   can't yet answer with confidence. This is now a data-backed change, unlike a k adjustment
+   proposed from Session 5's saturated numbers would have been.
+2. **Still recommend chunking on section boundaries, not resizing chunk_size/overlap** -- Session
+   5's proposal, now with independent corroborating evidence (chunk-level hit rate lagging
+   page-level hit rate by over 40 points at k=8) rather than a single anecdote. This remains
+   unimplemented; it's a recommendation, not a change made today, per this session's scope.
+3. **No evidence today supports changing the embedding model.** Nothing in this session compared
+   `all-MiniLM-L6-v2` against an alternative -- recommending a swap would be exactly the kind of
+   speculative change this session was scoped to avoid. If chunking-boundary fixes in a future
+   session don't close the chunk-level gap, an embedding-model comparison (using this same
+   chunk-level metric as the scoring function) would be the next evidence-generating experiment,
+   not a starting assumption.
+4. **Re-run generation-quality evaluation once the Groq daily quota resets**, before acting on the
+   3/5 false-refusal signal from this session's partial sample. If the full-sample number confirms
+   a materially elevated false-refusal rate on the larger corpus (plausible: more documents means
+   more topically-adjacent-but-wrong chunks competing for top-k, which could make the model more
+   conservative), that becomes a legitimate, separate priority for a future session's prompt work.

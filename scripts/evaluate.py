@@ -32,7 +32,7 @@ from papermind.evaluation.schemas import (
     GenerationResult,
     RetrievalResult,
 )  # noqa: E402
-from papermind.generation.llm import GroqLLM  # noqa: E402
+from papermind.generation.llm import GroqLLM, LLMError  # noqa: E402
 from papermind.generation.prompt import build_messages  # noqa: E402
 from papermind.generation.qa import NO_DOCUMENTS_ANSWER, build_citations  # noqa: E402
 from papermind.generation.schemas import Answer  # noqa: E402
@@ -57,42 +57,58 @@ def run_retrieval_sweep(
 
 def run_generation_eval(
     examples: list[EvalExample], retriever: Retriever, llm: GroqLLM
-) -> list[GenerationResult]:
+) -> tuple[list[GenerationResult], list[str]]:
+    """Run the full answer + judge pipeline per example.
+
+    A Groq failure (rate limit, timeout) on one question must not discard
+    results already earned for every prior question in the batch -- the same
+    per-item isolation principle scripts/ingest.py applies to a bad PDF.
+    Failed questions are logged and returned separately rather than silently
+    dropped, so the report can state honestly how much of the eval set ran.
+    """
     results = []
+    failed_questions = []
     for example in examples:
-        t0 = time.perf_counter()
-        retrieved = retriever.retrieve(example.question, k=GENERATION_K)
-        t1 = time.perf_counter()
-
-        answer_text = NO_DOCUMENTS_ANSWER
-        if retrieved:
-            answer_text = llm.complete(build_messages(example.question, retrieved))
-        t2 = time.perf_counter()
-
-        answer = Answer(
-            question=example.question,
-            text=answer_text,
-            citations=build_citations(retrieved),
-            retrieved_chunks=retrieved,
-        )
-        groundedness = score_groundedness(llm, example.question, retrieved, answer_text)
-
-        results.append(
-            GenerationResult(
-                question=example.question,
-                answer_text=answer_text,
-                should_refuse=example.should_refuse,
-                refused=looks_like_refusal(answer_text),
-                citation_correct=check_citation_correctness(example, answer),
-                page_match=check_page_match(example, answer),
-                groundedness_score=groundedness,
-                retrieval_latency_ms=(t1 - t0) * 1000,
-                generation_latency_ms=(t2 - t1) * 1000,
-                total_latency_ms=(t2 - t0) * 1000,
-            )
-        )
+        try:
+            results.append(_evaluate_one(example, retriever, llm))
+        except LLMError as exc:
+            logger.error("Skipping %r after Groq failure: %s", example.question, exc)
+            failed_questions.append(example.question)
+            continue
         logger.info("Evaluated: %s", example.question)
-    return results
+    return results, failed_questions
+
+
+def _evaluate_one(example: EvalExample, retriever: Retriever, llm: GroqLLM) -> GenerationResult:
+    t0 = time.perf_counter()
+    retrieved = retriever.retrieve(example.question, k=GENERATION_K)
+    t1 = time.perf_counter()
+
+    answer_text = NO_DOCUMENTS_ANSWER
+    if retrieved:
+        answer_text = llm.complete(build_messages(example.question, retrieved))
+    t2 = time.perf_counter()
+
+    answer = Answer(
+        question=example.question,
+        text=answer_text,
+        citations=build_citations(retrieved),
+        retrieved_chunks=retrieved,
+    )
+    groundedness = score_groundedness(llm, example.question, retrieved, answer_text)
+
+    return GenerationResult(
+        question=example.question,
+        answer_text=answer_text,
+        should_refuse=example.should_refuse,
+        refused=looks_like_refusal(answer_text),
+        citation_correct=check_citation_correctness(example, answer),
+        page_match=check_page_match(example, answer),
+        groundedness_score=groundedness,
+        retrieval_latency_ms=(t1 - t0) * 1000,
+        generation_latency_ms=(t2 - t1) * 1000,
+        total_latency_ms=(t2 - t0) * 1000,
+    )
 
 
 def latency_stats(values: list[float]) -> dict[str, float]:
@@ -133,14 +149,22 @@ def main() -> None:
     sweep = run_retrieval_sweep(answerable, retriever)
 
     logger.info("Running full pipeline evaluation at k=%d", GENERATION_K)
-    generation_results = run_generation_eval(examples, retriever, llm)
+    generation_results, failed_questions = run_generation_eval(examples, retriever, llm)
+    if failed_questions:
+        logger.warning(
+            "%d/%d questions failed and were excluded from the report: %s",
+            len(failed_questions),
+            len(examples),
+            failed_questions,
+        )
 
-    write_report(sweep, generation_results)
+    write_report(sweep, generation_results, failed_questions)
     RESULTS_PATH.write_text(
         json.dumps(
             {
                 "sweep": {str(k): [r.model_dump() for r in v] for k, v in sweep.items()},
                 "generation": [r.model_dump() for r in generation_results],
+                "failed_questions": failed_questions,
             },
             indent=2,
         )
@@ -151,19 +175,41 @@ def main() -> None:
 def write_report(
     sweep: dict[int, list[RetrievalResult]],
     generation_results: list[GenerationResult],
+    failed_questions: list[str],
 ) -> None:
     lines = ["# Papermind Evaluation Report", ""]
+
+    if failed_questions:
+        lines += [
+            f"**{len(failed_questions)} question(s) failed with a Groq API error and were "
+            "excluded from every metric below** (not counted as failures, not counted as "
+            "successes -- simply absent):",
+            "",
+            *[f"- {q}" for q in failed_questions],
+            "",
+        ]
+
+    first_results = next(iter(sweep.values()))
+    n_doc = sum(1 for r in first_results if r.document_hit is not None)
+    n_page = sum(1 for r in first_results if r.page_hit is not None)
+    n_chunk = sum(1 for r in first_results if r.chunk_hit is not None)
 
     lines += [
         "## Retrieval quality by top-k",
         "",
-        "| k | Hit Rate | MRR | n |",
-        "|---|---|---|---|",
+        f"n = {n_doc} document-level, {n_page} page-level, {n_chunk} chunk-level "
+        "(chunk-level ground truth only exists for narrow factual questions)",
+        "",
+        "| k | Doc Hit Rate | Doc MRR | Page Hit Rate | Page MRR | Chunk Hit Rate | Chunk MRR |",
+        "|---|---|---|---|---|---|---|",
     ]
     for k, results in sweep.items():
+        doc_hr, doc_mrr = hit_rate(results, "document"), mean_reciprocal_rank(results, "document")
+        page_hr, page_mrr = hit_rate(results, "page"), mean_reciprocal_rank(results, "page")
+        chunk_hr, chunk_mrr = hit_rate(results, "chunk"), mean_reciprocal_rank(results, "chunk")
         row = (
-            f"| {k} | {hit_rate(results):.2f} | "
-            f"{mean_reciprocal_rank(results):.3f} | {len(results)} |"
+            f"| {k} | {doc_hr:.2f} | {doc_mrr:.3f} "
+            f"| {page_hr:.2f} | {page_mrr:.3f} | {chunk_hr:.2f} | {chunk_mrr:.3f} |"
         )
         lines.append(row)
 

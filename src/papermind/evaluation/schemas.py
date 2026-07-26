@@ -5,6 +5,10 @@ class EvalExample(BaseModel):
     question: str
     expected_source: str | None = None
     expected_page: int | None = None
+    # Only set for narrow factual/hyperparameter questions with one genuine correct chunk --
+    # a conceptual question's answer can legitimately span several chunks, so this is left
+    # unset there rather than forced. See evaluation/README or Session 6 report for rationale.
+    expected_chunk_id: str | None = None
     should_refuse: bool = False
     notes: str | None = None
 
@@ -12,8 +16,12 @@ class EvalExample(BaseModel):
 class RetrievalResult(BaseModel):
     question: str
     k: int
-    hit: bool
-    rank: int | None  # 1-indexed rank of the first correct hit, None if absent from top-k
+    document_hit: bool
+    document_rank: int | None
+    page_hit: bool | None  # None when the example has no expected_page
+    page_rank: int | None
+    chunk_hit: bool | None  # None when the example has no expected_chunk_id
+    chunk_rank: int | None
 
 
 class GenerationResult(BaseModel):

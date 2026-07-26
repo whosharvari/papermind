@@ -3,126 +3,432 @@
     "question": "How many identical layers are stacked in the Transformer's encoder?",
     "expected_source": "attention_is_all_you_need.pdf",
     "expected_page": 3,
+    "expected_chunk_id": null,
     "should_refuse": false,
-    "notes": "N=6 stated directly on page 3"
+    "notes": "[factual] N=6 stated directly on page 3"
   },
   {
     "question": "What optimizer was used to train the Transformer model?",
     "expected_source": "attention_is_all_you_need.pdf",
     "expected_page": 7,
+    "expected_chunk_id": "attention_is_all_you_need.pdf::0030",
     "should_refuse": false,
-    "notes": "Adam with a warmup schedule"
+    "notes": "[hyperparameter] Adam with a warmup schedule; known Session 5 chunk-dilution failure case, kept to track whether it's fixed"
   },
   {
     "question": "How does the Transformer encode information about token position in a sequence?",
     "expected_source": "attention_is_all_you_need.pdf",
     "expected_page": 6,
+    "expected_chunk_id": null,
     "should_refuse": false,
-    "notes": "positional encoding section"
+    "notes": "[architecture] positional encoding section"
   },
   {
     "question": "What tokenization scheme does the Transformer use for its training vocabulary?",
     "expected_source": "attention_is_all_you_need.pdf",
     "expected_page": 9,
+    "expected_chunk_id": null,
     "should_refuse": false,
-    "notes": "WordPiece, mentioned in training data section"
+    "notes": "[methodology] WordPiece, mentioned in training data section"
   },
   {
     "question": "What decoding strategy is used to generate translations at inference time?",
     "expected_source": "attention_is_all_you_need.pdf",
     "expected_page": 8,
+    "expected_chunk_id": null,
     "should_refuse": false,
-    "notes": "beam search; may land on the p8/p9 boundary"
+    "notes": "[methodology] beam search; may land on the p8/p9 boundary"
   },
   {
     "question": "What is label smoothing and how was it used when training the Transformer?",
     "expected_source": "attention_is_all_you_need.pdf",
     "expected_page": 8,
+    "expected_chunk_id": null,
     "should_refuse": false,
-    "notes": null
+    "notes": "[hyperparameter]"
   },
   {
     "question": "What sub-layers make up each layer of the Transformer's decoder?",
     "expected_source": "attention_is_all_you_need.pdf",
     "expected_page": 3,
+    "expected_chunk_id": null,
     "should_refuse": false,
-    "notes": "self-attention + encoder-decoder attention + feed-forward"
+    "notes": "[architecture] self-attention + encoder-decoder attention + feed-forward"
   },
   {
     "question": "How is dropout applied during training of the Transformer?",
     "expected_source": "attention_is_all_you_need.pdf",
     "expected_page": 8,
+    "expected_chunk_id": null,
     "should_refuse": false,
-    "notes": null
+    "notes": "[hyperparameter]"
   },
   {
     "question": "What are the two unsupervised pre-training tasks used to train BERT?",
     "expected_source": "bert.pdf",
     "expected_page": 4,
+    "expected_chunk_id": null,
     "should_refuse": false,
-    "notes": "masked language modeling + next sentence prediction"
+    "notes": "[methodology] masked language modeling + next sentence prediction"
   },
   {
     "question": "During BERT pre-training, what fraction of the time is a masked position actually replaced with the [MASK] token?",
     "expected_source": "bert.pdf",
     "expected_page": 4,
+    "expected_chunk_id": null,
     "should_refuse": false,
-    "notes": "the 80/10/10 masking split"
+    "notes": "[hyperparameter] the 80/10/10 masking split"
   },
   {
     "question": "What two text corpora were used to pre-train BERT?",
     "expected_source": "bert.pdf",
     "expected_page": 5,
+    "expected_chunk_id": null,
     "should_refuse": false,
-    "notes": "BooksCorpus + Wikipedia; comparison also appears near p14"
+    "notes": "[factual] BooksCorpus + Wikipedia; comparison also appears near p14"
   },
   {
     "question": "How many parameters does BERT-large have?",
     "expected_source": "bert.pdf",
     "expected_page": 3,
+    "expected_chunk_id": null,
     "should_refuse": false,
-    "notes": "340M; also appears in the results tables around p8"
+    "notes": "[factual] 340M; also appears in the results tables around p8"
   },
   {
     "question": "What benchmark dataset is used to evaluate question-answering performance in the BERT paper?",
     "expected_source": "bert.pdf",
     "expected_page": 7,
+    "expected_chunk_id": null,
     "should_refuse": false,
-    "notes": "SQuAD leaderboard results table"
+    "notes": "[factual] SQuAD leaderboard results table"
   },
   {
     "question": "What is the main architectural difference between BERT's and OpenAI GPT's self-attention?",
     "expected_source": "bert.pdf",
     "expected_page": 14,
+    "expected_chunk_id": null,
     "should_refuse": false,
-    "notes": "bidirectional vs. left-to-right, direct comparison section"
+    "notes": "[comparison] bidirectional vs. left-to-right, direct comparison section"
   },
   {
     "question": "What GLUE benchmark score does BERT achieve?",
     "expected_source": "bert.pdf",
     "expected_page": 1,
+    "expected_chunk_id": null,
     "should_refuse": false,
-    "notes": "headline result in the abstract; may also retrieve the results tables around p5-6"
+    "notes": "[factual] headline result in the abstract; may also retrieve the results tables around p5-6"
   },
   {
     "question": "What is the difference between BERT's masked language model objective and a traditional left-to-right language model?",
     "expected_source": "bert.pdf",
     "expected_page": 1,
+    "expected_chunk_id": null,
     "should_refuse": false,
-    "notes": null
+    "notes": "[conceptual]"
   },
   {
-    "question": "What are the limitations of Chain-of-Thought prompting?",
-    "expected_source": null,
-    "expected_page": null,
-    "should_refuse": true,
-    "notes": "not covered by either indexed paper -- correct behavior is refusal, not fabrication"
+    "question": "What are the limitations of Chain-of-Thought prompting discussed in the paper that introduced it?",
+    "expected_source": "chain_of_thought_prompting.pdf",
+    "expected_page": 26,
+    "expected_chunk_id": null,
+    "should_refuse": false,
+    "notes": "[conceptual] was a refusal example through Session 5; now answerable since the CoT paper itself was added to the corpus in Session 6 -- watch for whether the system correctly stops treating this as out-of-corpus"
   },
   {
-    "question": "How does Reinforcement Learning from Human Feedback (RLHF) work?",
+    "question": "How many parameters does the largest GPT-3 model have?",
+    "expected_source": "gpt3_few_shot_learners.pdf",
+    "expected_page": 8,
+    "expected_chunk_id": "gpt3_few_shot_learners.pdf::0035",
+    "should_refuse": false,
+    "notes": "[hyperparameter] 175B"
+  },
+  {
+    "question": "What is few-shot learning as described in the GPT-3 paper?",
+    "expected_source": "gpt3_few_shot_learners.pdf",
+    "expected_page": 1,
+    "expected_chunk_id": null,
+    "should_refuse": false,
+    "notes": "[conceptual]"
+  },
+  {
+    "question": "What is the maximum context window size, in tokens, that GPT-3 processes?",
+    "expected_source": "gpt3_few_shot_learners.pdf",
+    "expected_page": 8,
+    "expected_chunk_id": "gpt3_few_shot_learners.pdf::0037",
+    "should_refuse": false,
+    "notes": "[hyperparameter] 2048 tokens"
+  },
+  {
+    "question": "How does GPT-3's approach to few-shot learning differ from traditional fine-tuning?",
+    "expected_source": "gpt3_few_shot_learners.pdf",
+    "expected_page": 1,
+    "expected_chunk_id": null,
+    "should_refuse": false,
+    "notes": "[methodology]"
+  },
+  {
+    "question": "What patch size does the Vision Transformer use to split an input image into a sequence of tokens?",
+    "expected_source": "vit_image_16x16_words.pdf",
+    "expected_page": 1,
+    "expected_chunk_id": "vit_image_16x16_words.pdf::0000",
+    "should_refuse": false,
+    "notes": "[hyperparameter] 16x16 patches, in the title itself"
+  },
+  {
+    "question": "What large-scale dataset was the Vision Transformer pre-trained on before evaluation?",
+    "expected_source": "vit_image_16x16_words.pdf",
+    "expected_page": 2,
+    "expected_chunk_id": null,
+    "should_refuse": false,
+    "notes": "[factual] JFT-300M / ImageNet-21k"
+  },
+  {
+    "question": "How does the Vision Transformer's performance compare to convolutional neural networks when trained on smaller datasets?",
+    "expected_source": "vit_image_16x16_words.pdf",
+    "expected_page": 2,
+    "expected_chunk_id": null,
+    "should_refuse": false,
+    "notes": "[comparison]"
+  },
+  {
+    "question": "What pre-training objective does CLIP use to align images and text?",
+    "expected_source": "clip_visual_language.pdf",
+    "expected_page": 2,
+    "expected_chunk_id": null,
+    "should_refuse": false,
+    "notes": "[methodology] contrastive learning"
+  },
+  {
+    "question": "How many image-text pairs were used to train CLIP?",
+    "expected_source": "clip_visual_language.pdf",
+    "expected_page": 1,
+    "expected_chunk_id": "clip_visual_language.pdf::0000",
+    "should_refuse": false,
+    "notes": "[factual] 400 million"
+  },
+  {
+    "question": "How does CLIP perform zero-shot image classification without task-specific training data?",
+    "expected_source": "clip_visual_language.pdf",
+    "expected_page": 1,
+    "expected_chunk_id": null,
+    "should_refuse": false,
+    "notes": "[conceptual]"
+  },
+  {
+    "question": "What is the core idea behind LoRA for adapting large language models?",
+    "expected_source": "lora_low_rank_adaptation.pdf",
+    "expected_page": 1,
+    "expected_chunk_id": null,
+    "should_refuse": false,
+    "notes": "[conceptual] low-rank decomposition of weight updates"
+  },
+  {
+    "question": "Which weight matrices in the Transformer's attention mechanism does LoRA typically adapt?",
+    "expected_source": "lora_low_rank_adaptation.pdf",
+    "expected_page": 2,
+    "expected_chunk_id": "lora_low_rank_adaptation.pdf::0008",
+    "should_refuse": false,
+    "notes": "[architecture] Wq/Wv"
+  },
+  {
+    "question": "Does LoRA introduce additional inference latency compared to a fully fine-tuned model?",
+    "expected_source": "lora_low_rank_adaptation.pdf",
+    "expected_page": 1,
+    "expected_chunk_id": null,
+    "should_refuse": false,
+    "notes": "[methodology]"
+  },
+  {
+    "question": "What two components make up a Retrieval-Augmented Generation (RAG) model?",
+    "expected_source": "rag_knowledge_intensive.pdf",
+    "expected_page": 1,
+    "expected_chunk_id": null,
+    "should_refuse": false,
+    "notes": "[architecture] parametric generator + non-parametric retriever"
+  },
+  {
+    "question": "What retriever architecture does the RAG paper use to fetch supporting documents?",
+    "expected_source": "rag_knowledge_intensive.pdf",
+    "expected_page": 2,
+    "expected_chunk_id": "rag_knowledge_intensive.pdf::0006",
+    "should_refuse": false,
+    "notes": "[factual] Dense Passage Retriever (DPR)"
+  },
+  {
+    "question": "What is the difference between the RAG-Sequence and RAG-Token model variants?",
+    "expected_source": "rag_knowledge_intensive.pdf",
+    "expected_page": 3,
+    "expected_chunk_id": null,
+    "should_refuse": false,
+    "notes": "[comparison]"
+  },
+  {
+    "question": "How is the reward model trained in the human-preference-based reinforcement learning approach described in this paper?",
+    "expected_source": "rlhf_human_preferences.pdf",
+    "expected_page": 5,
+    "expected_chunk_id": null,
+    "should_refuse": false,
+    "notes": "[methodology] pairwise trajectory-segment comparisons"
+  },
+  {
+    "question": "What kinds of tasks were used to evaluate this human-feedback-based reinforcement learning approach?",
+    "expected_source": "rlhf_human_preferences.pdf",
+    "expected_page": 1,
+    "expected_chunk_id": null,
+    "should_refuse": false,
+    "notes": "[factual] Atari games and simulated robotics"
+  },
+  {
+    "question": "What happens during the forward process in a denoising diffusion probabilistic model?",
+    "expected_source": "ddpm_diffusion_models.pdf",
+    "expected_page": 2,
+    "expected_chunk_id": null,
+    "should_refuse": false,
+    "notes": "[architecture] gradually adding Gaussian noise"
+  },
+  {
+    "question": "What training objective is used to optimize denoising diffusion probabilistic models?",
+    "expected_source": "ddpm_diffusion_models.pdf",
+    "expected_page": 2,
+    "expected_chunk_id": null,
+    "should_refuse": false,
+    "notes": "[methodology] variational lower bound"
+  },
+  {
+    "question": "What is chain-of-thought prompting?",
+    "expected_source": "chain_of_thought_prompting.pdf",
+    "expected_page": 1,
+    "expected_chunk_id": null,
+    "should_refuse": false,
+    "notes": "[conceptual]"
+  },
+  {
+    "question": "What category of tasks shows the largest improvement from chain-of-thought prompting?",
+    "expected_source": "chain_of_thought_prompting.pdf",
+    "expected_page": 2,
+    "expected_chunk_id": null,
+    "should_refuse": false,
+    "notes": "[factual] arithmetic reasoning"
+  },
+  {
+    "question": "At what model scale does chain-of-thought prompting begin to improve performance?",
+    "expected_source": "chain_of_thought_prompting.pdf",
+    "expected_page": 4,
+    "expected_chunk_id": null,
+    "should_refuse": false,
+    "notes": "[hyperparameter] emergent ability, only at large scale"
+  },
+  {
+    "question": "What three training stages make up the InstructGPT pipeline?",
+    "expected_source": "instructgpt_human_feedback.pdf",
+    "expected_page": 2,
+    "expected_chunk_id": null,
+    "should_refuse": false,
+    "notes": "[methodology] supervised fine-tuning, reward modeling, PPO"
+  },
+  {
+    "question": "What reinforcement learning algorithm is used to fine-tune InstructGPT against the reward model?",
+    "expected_source": "instructgpt_human_feedback.pdf",
+    "expected_page": 2,
+    "expected_chunk_id": "instructgpt_human_feedback.pdf::0004",
+    "should_refuse": false,
+    "notes": "[factual] Proximal Policy Optimization (PPO)"
+  },
+  {
+    "question": "How does InstructGPT compare to the base GPT-3 model in human preference evaluations?",
+    "expected_source": "instructgpt_human_feedback.pdf",
+    "expected_page": 2,
+    "expected_chunk_id": null,
+    "should_refuse": false,
+    "notes": "[comparison]"
+  },
+  {
+    "question": "What claim does the LLaMA paper make about the availability of its training data sources?",
+    "expected_source": "llama_open_foundation_models.pdf",
+    "expected_page": 1,
+    "expected_chunk_id": null,
+    "should_refuse": false,
+    "notes": "[factual] trained exclusively on publicly available data"
+  },
+  {
+    "question": "How many training tokens was LLaMA trained on?",
+    "expected_source": "llama_open_foundation_models.pdf",
+    "expected_page": 11,
+    "expected_chunk_id": "llama_open_foundation_models.pdf::0066",
+    "should_refuse": false,
+    "notes": "[hyperparameter] trillions of tokens"
+  },
+  {
+    "question": "What problem do residual connections address in very deep neural networks?",
+    "expected_source": "resnet_deep_residual_learning.pdf",
+    "expected_page": 1,
+    "expected_chunk_id": null,
+    "should_refuse": false,
+    "notes": "[conceptual] the degradation problem"
+  },
+  {
+    "question": "What is a shortcut (skip) connection in a residual block?",
+    "expected_source": "resnet_deep_residual_learning.pdf",
+    "expected_page": 2,
+    "expected_chunk_id": null,
+    "should_refuse": false,
+    "notes": "[architecture]"
+  },
+  {
+    "question": "How does LoRA's parameter-efficient fine-tuning approach differ from the full-parameter fine-tuning used to train InstructGPT's supervised policy?",
+    "expected_source": "lora_low_rank_adaptation.pdf",
+    "expected_page": 1,
+    "expected_chunk_id": null,
+    "should_refuse": false,
+    "notes": "[comparison, cross-paper] primary source is LoRA's own framing of full fine-tuning's cost; InstructGPT is also a plausible partial match"
+  },
+  {
+    "question": "How does the retrieval-augmented approach in RAG differ from relying purely on a large pre-trained language model's parametric knowledge, as GPT-3 does?",
+    "expected_source": "rag_knowledge_intensive.pdf",
+    "expected_page": 1,
+    "expected_chunk_id": null,
+    "should_refuse": false,
+    "notes": "[comparison, cross-paper] primary source is RAG's own framing; GPT-3 is also a plausible partial match"
+  },
+  {
+    "question": "What is the AlphaFold protein structure prediction algorithm?",
     "expected_source": null,
     "expected_page": null,
+    "expected_chunk_id": null,
     "should_refuse": true,
-    "notes": "not covered by either indexed paper"
+    "notes": "not covered by any of the 13 indexed papers"
+  },
+  {
+    "question": "How does federated learning preserve data privacy across distributed devices?",
+    "expected_source": null,
+    "expected_page": null,
+    "expected_chunk_id": null,
+    "should_refuse": true,
+    "notes": "not covered by any of the 13 indexed papers"
+  },
+  {
+    "question": "What is Transformer-XL's approach to handling context beyond a fixed-length window?",
+    "expected_source": null,
+    "expected_page": null,
+    "expected_chunk_id": null,
+    "should_refuse": true,
+    "notes": "not covered -- deliberately adjacent to the indexed Transformer/attention papers to test discrimination, not just topical distance"
+  },
+  {
+    "question": "What is the Mixture-of-Experts architecture used for scaling neural networks?",
+    "expected_source": null,
+    "expected_page": null,
+    "expected_chunk_id": null,
+    "should_refuse": true,
+    "notes": "not covered by any of the 13 indexed papers"
+  },
+  {
+    "question": "How does the Word2Vec skip-gram model learn word embeddings?",
+    "expected_source": null,
+    "expected_page": null,
+    "expected_chunk_id": null,
+    "should_refuse": true,
+    "notes": "not covered by any of the 13 indexed papers"
   }
 ]

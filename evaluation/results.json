@@ -4,513 +4,1590 @@
       {
         "question": "How many identical layers are stacked in the Transformer's encoder?",
         "k": 3,
-        "hit": true,
-        "rank": 1
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 1,
+        "chunk_hit": null,
+        "chunk_rank": null
       },
       {
         "question": "What optimizer was used to train the Transformer model?",
         "k": 3,
-        "hit": true,
-        "rank": 1
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 1,
+        "chunk_hit": false,
+        "chunk_rank": null
       },
       {
         "question": "How does the Transformer encode information about token position in a sequence?",
         "k": 3,
-        "hit": true,
-        "rank": 1
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 1,
+        "chunk_hit": null,
+        "chunk_rank": null
       },
       {
         "question": "What tokenization scheme does the Transformer use for its training vocabulary?",
         "k": 3,
-        "hit": true,
-        "rank": 3
+        "document_hit": false,
+        "document_rank": null,
+        "page_hit": false,
+        "page_rank": null,
+        "chunk_hit": null,
+        "chunk_rank": null
       },
       {
         "question": "What decoding strategy is used to generate translations at inference time?",
         "k": 3,
-        "hit": true,
-        "rank": 1
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": false,
+        "page_rank": null,
+        "chunk_hit": null,
+        "chunk_rank": null
       },
       {
         "question": "What is label smoothing and how was it used when training the Transformer?",
         "k": 3,
-        "hit": true,
-        "rank": 1
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 1,
+        "chunk_hit": null,
+        "chunk_rank": null
       },
       {
         "question": "What sub-layers make up each layer of the Transformer's decoder?",
         "k": 3,
-        "hit": true,
-        "rank": 1
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 1,
+        "chunk_hit": null,
+        "chunk_rank": null
       },
       {
         "question": "How is dropout applied during training of the Transformer?",
         "k": 3,
-        "hit": true,
-        "rank": 1
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 1,
+        "chunk_hit": null,
+        "chunk_rank": null
       },
       {
         "question": "What are the two unsupervised pre-training tasks used to train BERT?",
         "k": 3,
-        "hit": true,
-        "rank": 1
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 1,
+        "chunk_hit": null,
+        "chunk_rank": null
       },
       {
         "question": "During BERT pre-training, what fraction of the time is a masked position actually replaced with the [MASK] token?",
         "k": 3,
-        "hit": true,
-        "rank": 1
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 1,
+        "chunk_hit": null,
+        "chunk_rank": null
       },
       {
         "question": "What two text corpora were used to pre-train BERT?",
         "k": 3,
-        "hit": true,
-        "rank": 1
+        "document_hit": true,
+        "document_rank": 2,
+        "page_hit": false,
+        "page_rank": null,
+        "chunk_hit": null,
+        "chunk_rank": null
       },
       {
         "question": "How many parameters does BERT-large have?",
         "k": 3,
-        "hit": true,
-        "rank": 1
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 2,
+        "chunk_hit": null,
+        "chunk_rank": null
       },
       {
         "question": "What benchmark dataset is used to evaluate question-answering performance in the BERT paper?",
         "k": 3,
-        "hit": true,
-        "rank": 1
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 1,
+        "chunk_hit": null,
+        "chunk_rank": null
       },
       {
         "question": "What is the main architectural difference between BERT's and OpenAI GPT's self-attention?",
         "k": 3,
-        "hit": true,
-        "rank": 1
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 2,
+        "chunk_hit": null,
+        "chunk_rank": null
       },
       {
         "question": "What GLUE benchmark score does BERT achieve?",
         "k": 3,
-        "hit": true,
-        "rank": 1
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": false,
+        "page_rank": null,
+        "chunk_hit": null,
+        "chunk_rank": null
       },
       {
         "question": "What is the difference between BERT's masked language model objective and a traditional left-to-right language model?",
         "k": 3,
-        "hit": true,
-        "rank": 1
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": false,
+        "page_rank": null,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "What are the limitations of Chain-of-Thought prompting discussed in the paper that introduced it?",
+        "k": 3,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": false,
+        "page_rank": null,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "How many parameters does the largest GPT-3 model have?",
+        "k": 3,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 1,
+        "chunk_hit": true,
+        "chunk_rank": 1
+      },
+      {
+        "question": "What is few-shot learning as described in the GPT-3 paper?",
+        "k": 3,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": false,
+        "page_rank": null,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "What is the maximum context window size, in tokens, that GPT-3 processes?",
+        "k": 3,
+        "document_hit": true,
+        "document_rank": 2,
+        "page_hit": true,
+        "page_rank": 2,
+        "chunk_hit": true,
+        "chunk_rank": 3
+      },
+      {
+        "question": "How does GPT-3's approach to few-shot learning differ from traditional fine-tuning?",
+        "k": 3,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": false,
+        "page_rank": null,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "What patch size does the Vision Transformer use to split an input image into a sequence of tokens?",
+        "k": 3,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": false,
+        "page_rank": null,
+        "chunk_hit": false,
+        "chunk_rank": null
+      },
+      {
+        "question": "What large-scale dataset was the Vision Transformer pre-trained on before evaluation?",
+        "k": 3,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": false,
+        "page_rank": null,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "How does the Vision Transformer's performance compare to convolutional neural networks when trained on smaller datasets?",
+        "k": 3,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 1,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "What pre-training objective does CLIP use to align images and text?",
+        "k": 3,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": false,
+        "page_rank": null,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "How many image-text pairs were used to train CLIP?",
+        "k": 3,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": false,
+        "page_rank": null,
+        "chunk_hit": false,
+        "chunk_rank": null
+      },
+      {
+        "question": "How does CLIP perform zero-shot image classification without task-specific training data?",
+        "k": 3,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": false,
+        "page_rank": null,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "What is the core idea behind LoRA for adapting large language models?",
+        "k": 3,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 1,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "Which weight matrices in the Transformer's attention mechanism does LoRA typically adapt?",
+        "k": 3,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": false,
+        "page_rank": null,
+        "chunk_hit": false,
+        "chunk_rank": null
+      },
+      {
+        "question": "Does LoRA introduce additional inference latency compared to a fully fine-tuned model?",
+        "k": 3,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": false,
+        "page_rank": null,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "What two components make up a Retrieval-Augmented Generation (RAG) model?",
+        "k": 3,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": false,
+        "page_rank": null,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "What retriever architecture does the RAG paper use to fetch supporting documents?",
+        "k": 3,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": false,
+        "page_rank": null,
+        "chunk_hit": false,
+        "chunk_rank": null
+      },
+      {
+        "question": "What is the difference between the RAG-Sequence and RAG-Token model variants?",
+        "k": 3,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 1,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "How is the reward model trained in the human-preference-based reinforcement learning approach described in this paper?",
+        "k": 3,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": false,
+        "page_rank": null,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "What kinds of tasks were used to evaluate this human-feedback-based reinforcement learning approach?",
+        "k": 3,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": false,
+        "page_rank": null,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "What happens during the forward process in a denoising diffusion probabilistic model?",
+        "k": 3,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 1,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "What training objective is used to optimize denoising diffusion probabilistic models?",
+        "k": 3,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 1,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "What is chain-of-thought prompting?",
+        "k": 3,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": false,
+        "page_rank": null,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "What category of tasks shows the largest improvement from chain-of-thought prompting?",
+        "k": 3,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 2,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "At what model scale does chain-of-thought prompting begin to improve performance?",
+        "k": 3,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 1,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "What three training stages make up the InstructGPT pipeline?",
+        "k": 3,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": false,
+        "page_rank": null,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "What reinforcement learning algorithm is used to fine-tune InstructGPT against the reward model?",
+        "k": 3,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": false,
+        "page_rank": null,
+        "chunk_hit": false,
+        "chunk_rank": null
+      },
+      {
+        "question": "How does InstructGPT compare to the base GPT-3 model in human preference evaluations?",
+        "k": 3,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": false,
+        "page_rank": null,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "What claim does the LLaMA paper make about the availability of its training data sources?",
+        "k": 3,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 1,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "How many training tokens was LLaMA trained on?",
+        "k": 3,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": false,
+        "page_rank": null,
+        "chunk_hit": false,
+        "chunk_rank": null
+      },
+      {
+        "question": "What problem do residual connections address in very deep neural networks?",
+        "k": 3,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 2,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "What is a shortcut (skip) connection in a residual block?",
+        "k": 3,
+        "document_hit": true,
+        "document_rank": 2,
+        "page_hit": true,
+        "page_rank": 2,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "How does LoRA's parameter-efficient fine-tuning approach differ from the full-parameter fine-tuning used to train InstructGPT's supervised policy?",
+        "k": 3,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": false,
+        "page_rank": null,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "How does the retrieval-augmented approach in RAG differ from relying purely on a large pre-trained language model's parametric knowledge, as GPT-3 does?",
+        "k": 3,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": false,
+        "page_rank": null,
+        "chunk_hit": null,
+        "chunk_rank": null
       }
     ],
     "5": [
       {
         "question": "How many identical layers are stacked in the Transformer's encoder?",
         "k": 5,
-        "hit": true,
-        "rank": 1
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 1,
+        "chunk_hit": null,
+        "chunk_rank": null
       },
       {
         "question": "What optimizer was used to train the Transformer model?",
         "k": 5,
-        "hit": true,
-        "rank": 1
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 1,
+        "chunk_hit": false,
+        "chunk_rank": null
       },
       {
         "question": "How does the Transformer encode information about token position in a sequence?",
         "k": 5,
-        "hit": true,
-        "rank": 1
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 1,
+        "chunk_hit": null,
+        "chunk_rank": null
       },
       {
         "question": "What tokenization scheme does the Transformer use for its training vocabulary?",
         "k": 5,
-        "hit": true,
-        "rank": 3
+        "document_hit": false,
+        "document_rank": null,
+        "page_hit": false,
+        "page_rank": null,
+        "chunk_hit": null,
+        "chunk_rank": null
       },
       {
         "question": "What decoding strategy is used to generate translations at inference time?",
         "k": 5,
-        "hit": true,
-        "rank": 1
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": false,
+        "page_rank": null,
+        "chunk_hit": null,
+        "chunk_rank": null
       },
       {
         "question": "What is label smoothing and how was it used when training the Transformer?",
         "k": 5,
-        "hit": true,
-        "rank": 1
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 1,
+        "chunk_hit": null,
+        "chunk_rank": null
       },
       {
         "question": "What sub-layers make up each layer of the Transformer's decoder?",
         "k": 5,
-        "hit": true,
-        "rank": 1
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 1,
+        "chunk_hit": null,
+        "chunk_rank": null
       },
       {
         "question": "How is dropout applied during training of the Transformer?",
         "k": 5,
-        "hit": true,
-        "rank": 1
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 1,
+        "chunk_hit": null,
+        "chunk_rank": null
       },
       {
         "question": "What are the two unsupervised pre-training tasks used to train BERT?",
         "k": 5,
-        "hit": true,
-        "rank": 1
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 1,
+        "chunk_hit": null,
+        "chunk_rank": null
       },
       {
         "question": "During BERT pre-training, what fraction of the time is a masked position actually replaced with the [MASK] token?",
         "k": 5,
-        "hit": true,
-        "rank": 1
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 1,
+        "chunk_hit": null,
+        "chunk_rank": null
       },
       {
         "question": "What two text corpora were used to pre-train BERT?",
         "k": 5,
-        "hit": true,
-        "rank": 1
+        "document_hit": true,
+        "document_rank": 2,
+        "page_hit": true,
+        "page_rank": 4,
+        "chunk_hit": null,
+        "chunk_rank": null
       },
       {
         "question": "How many parameters does BERT-large have?",
         "k": 5,
-        "hit": true,
-        "rank": 1
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 2,
+        "chunk_hit": null,
+        "chunk_rank": null
       },
       {
         "question": "What benchmark dataset is used to evaluate question-answering performance in the BERT paper?",
         "k": 5,
-        "hit": true,
-        "rank": 1
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 1,
+        "chunk_hit": null,
+        "chunk_rank": null
       },
       {
         "question": "What is the main architectural difference between BERT's and OpenAI GPT's self-attention?",
         "k": 5,
-        "hit": true,
-        "rank": 1
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 2,
+        "chunk_hit": null,
+        "chunk_rank": null
       },
       {
         "question": "What GLUE benchmark score does BERT achieve?",
         "k": 5,
-        "hit": true,
-        "rank": 1
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": false,
+        "page_rank": null,
+        "chunk_hit": null,
+        "chunk_rank": null
       },
       {
         "question": "What is the difference between BERT's masked language model objective and a traditional left-to-right language model?",
         "k": 5,
-        "hit": true,
-        "rank": 1
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": false,
+        "page_rank": null,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "What are the limitations of Chain-of-Thought prompting discussed in the paper that introduced it?",
+        "k": 5,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": false,
+        "page_rank": null,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "How many parameters does the largest GPT-3 model have?",
+        "k": 5,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 1,
+        "chunk_hit": true,
+        "chunk_rank": 1
+      },
+      {
+        "question": "What is few-shot learning as described in the GPT-3 paper?",
+        "k": 5,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": false,
+        "page_rank": null,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "What is the maximum context window size, in tokens, that GPT-3 processes?",
+        "k": 5,
+        "document_hit": true,
+        "document_rank": 2,
+        "page_hit": true,
+        "page_rank": 2,
+        "chunk_hit": true,
+        "chunk_rank": 3
+      },
+      {
+        "question": "How does GPT-3's approach to few-shot learning differ from traditional fine-tuning?",
+        "k": 5,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": false,
+        "page_rank": null,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "What patch size does the Vision Transformer use to split an input image into a sequence of tokens?",
+        "k": 5,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 5,
+        "chunk_hit": false,
+        "chunk_rank": null
+      },
+      {
+        "question": "What large-scale dataset was the Vision Transformer pre-trained on before evaluation?",
+        "k": 5,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 5,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "How does the Vision Transformer's performance compare to convolutional neural networks when trained on smaller datasets?",
+        "k": 5,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 1,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "What pre-training objective does CLIP use to align images and text?",
+        "k": 5,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": false,
+        "page_rank": null,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "How many image-text pairs were used to train CLIP?",
+        "k": 5,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": false,
+        "page_rank": null,
+        "chunk_hit": false,
+        "chunk_rank": null
+      },
+      {
+        "question": "How does CLIP perform zero-shot image classification without task-specific training data?",
+        "k": 5,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": false,
+        "page_rank": null,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "What is the core idea behind LoRA for adapting large language models?",
+        "k": 5,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 1,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "Which weight matrices in the Transformer's attention mechanism does LoRA typically adapt?",
+        "k": 5,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": false,
+        "page_rank": null,
+        "chunk_hit": false,
+        "chunk_rank": null
+      },
+      {
+        "question": "Does LoRA introduce additional inference latency compared to a fully fine-tuned model?",
+        "k": 5,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": false,
+        "page_rank": null,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "What two components make up a Retrieval-Augmented Generation (RAG) model?",
+        "k": 5,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": false,
+        "page_rank": null,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "What retriever architecture does the RAG paper use to fetch supporting documents?",
+        "k": 5,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 5,
+        "chunk_hit": false,
+        "chunk_rank": null
+      },
+      {
+        "question": "What is the difference between the RAG-Sequence and RAG-Token model variants?",
+        "k": 5,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 1,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "How is the reward model trained in the human-preference-based reinforcement learning approach described in this paper?",
+        "k": 5,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": false,
+        "page_rank": null,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "What kinds of tasks were used to evaluate this human-feedback-based reinforcement learning approach?",
+        "k": 5,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 5,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "What happens during the forward process in a denoising diffusion probabilistic model?",
+        "k": 5,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 1,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "What training objective is used to optimize denoising diffusion probabilistic models?",
+        "k": 5,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 1,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "What is chain-of-thought prompting?",
+        "k": 5,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": false,
+        "page_rank": null,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "What category of tasks shows the largest improvement from chain-of-thought prompting?",
+        "k": 5,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 2,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "At what model scale does chain-of-thought prompting begin to improve performance?",
+        "k": 5,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 1,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "What three training stages make up the InstructGPT pipeline?",
+        "k": 5,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 4,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "What reinforcement learning algorithm is used to fine-tune InstructGPT against the reward model?",
+        "k": 5,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 4,
+        "chunk_hit": false,
+        "chunk_rank": null
+      },
+      {
+        "question": "How does InstructGPT compare to the base GPT-3 model in human preference evaluations?",
+        "k": 5,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": false,
+        "page_rank": null,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "What claim does the LLaMA paper make about the availability of its training data sources?",
+        "k": 5,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 1,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "How many training tokens was LLaMA trained on?",
+        "k": 5,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": false,
+        "page_rank": null,
+        "chunk_hit": false,
+        "chunk_rank": null
+      },
+      {
+        "question": "What problem do residual connections address in very deep neural networks?",
+        "k": 5,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 2,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "What is a shortcut (skip) connection in a residual block?",
+        "k": 5,
+        "document_hit": true,
+        "document_rank": 2,
+        "page_hit": true,
+        "page_rank": 2,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "How does LoRA's parameter-efficient fine-tuning approach differ from the full-parameter fine-tuning used to train InstructGPT's supervised policy?",
+        "k": 5,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": false,
+        "page_rank": null,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "How does the retrieval-augmented approach in RAG differ from relying purely on a large pre-trained language model's parametric knowledge, as GPT-3 does?",
+        "k": 5,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": false,
+        "page_rank": null,
+        "chunk_hit": null,
+        "chunk_rank": null
       }
     ],
     "8": [
       {
         "question": "How many identical layers are stacked in the Transformer's encoder?",
         "k": 8,
-        "hit": true,
-        "rank": 1
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 1,
+        "chunk_hit": null,
+        "chunk_rank": null
       },
       {
         "question": "What optimizer was used to train the Transformer model?",
         "k": 8,
-        "hit": true,
-        "rank": 1
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 1,
+        "chunk_hit": false,
+        "chunk_rank": null
       },
       {
         "question": "How does the Transformer encode information about token position in a sequence?",
         "k": 8,
-        "hit": true,
-        "rank": 1
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 1,
+        "chunk_hit": null,
+        "chunk_rank": null
       },
       {
         "question": "What tokenization scheme does the Transformer use for its training vocabulary?",
         "k": 8,
-        "hit": true,
-        "rank": 3
+        "document_hit": false,
+        "document_rank": null,
+        "page_hit": false,
+        "page_rank": null,
+        "chunk_hit": null,
+        "chunk_rank": null
       },
       {
         "question": "What decoding strategy is used to generate translations at inference time?",
         "k": 8,
-        "hit": true,
-        "rank": 1
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": false,
+        "page_rank": null,
+        "chunk_hit": null,
+        "chunk_rank": null
       },
       {
         "question": "What is label smoothing and how was it used when training the Transformer?",
         "k": 8,
-        "hit": true,
-        "rank": 1
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 1,
+        "chunk_hit": null,
+        "chunk_rank": null
       },
       {
         "question": "What sub-layers make up each layer of the Transformer's decoder?",
         "k": 8,
-        "hit": true,
-        "rank": 1
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 1,
+        "chunk_hit": null,
+        "chunk_rank": null
       },
       {
         "question": "How is dropout applied during training of the Transformer?",
         "k": 8,
-        "hit": true,
-        "rank": 1
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 1,
+        "chunk_hit": null,
+        "chunk_rank": null
       },
       {
         "question": "What are the two unsupervised pre-training tasks used to train BERT?",
         "k": 8,
-        "hit": true,
-        "rank": 1
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 1,
+        "chunk_hit": null,
+        "chunk_rank": null
       },
       {
         "question": "During BERT pre-training, what fraction of the time is a masked position actually replaced with the [MASK] token?",
         "k": 8,
-        "hit": true,
-        "rank": 1
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 1,
+        "chunk_hit": null,
+        "chunk_rank": null
       },
       {
         "question": "What two text corpora were used to pre-train BERT?",
         "k": 8,
-        "hit": true,
-        "rank": 1
+        "document_hit": true,
+        "document_rank": 2,
+        "page_hit": true,
+        "page_rank": 4,
+        "chunk_hit": null,
+        "chunk_rank": null
       },
       {
         "question": "How many parameters does BERT-large have?",
         "k": 8,
-        "hit": true,
-        "rank": 1
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 2,
+        "chunk_hit": null,
+        "chunk_rank": null
       },
       {
         "question": "What benchmark dataset is used to evaluate question-answering performance in the BERT paper?",
         "k": 8,
-        "hit": true,
-        "rank": 1
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 1,
+        "chunk_hit": null,
+        "chunk_rank": null
       },
       {
         "question": "What is the main architectural difference between BERT's and OpenAI GPT's self-attention?",
         "k": 8,
-        "hit": true,
-        "rank": 1
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 2,
+        "chunk_hit": null,
+        "chunk_rank": null
       },
       {
         "question": "What GLUE benchmark score does BERT achieve?",
         "k": 8,
-        "hit": true,
-        "rank": 1
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": false,
+        "page_rank": null,
+        "chunk_hit": null,
+        "chunk_rank": null
       },
       {
         "question": "What is the difference between BERT's masked language model objective and a traditional left-to-right language model?",
         "k": 8,
-        "hit": true,
-        "rank": 1
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 8,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "What are the limitations of Chain-of-Thought prompting discussed in the paper that introduced it?",
+        "k": 8,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": false,
+        "page_rank": null,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "How many parameters does the largest GPT-3 model have?",
+        "k": 8,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 1,
+        "chunk_hit": true,
+        "chunk_rank": 1
+      },
+      {
+        "question": "What is few-shot learning as described in the GPT-3 paper?",
+        "k": 8,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": false,
+        "page_rank": null,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "What is the maximum context window size, in tokens, that GPT-3 processes?",
+        "k": 8,
+        "document_hit": true,
+        "document_rank": 2,
+        "page_hit": true,
+        "page_rank": 2,
+        "chunk_hit": true,
+        "chunk_rank": 3
+      },
+      {
+        "question": "How does GPT-3's approach to few-shot learning differ from traditional fine-tuning?",
+        "k": 8,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": false,
+        "page_rank": null,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "What patch size does the Vision Transformer use to split an input image into a sequence of tokens?",
+        "k": 8,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 5,
+        "chunk_hit": false,
+        "chunk_rank": null
+      },
+      {
+        "question": "What large-scale dataset was the Vision Transformer pre-trained on before evaluation?",
+        "k": 8,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 5,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "How does the Vision Transformer's performance compare to convolutional neural networks when trained on smaller datasets?",
+        "k": 8,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 1,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "What pre-training objective does CLIP use to align images and text?",
+        "k": 8,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": false,
+        "page_rank": null,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "How many image-text pairs were used to train CLIP?",
+        "k": 8,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": false,
+        "page_rank": null,
+        "chunk_hit": false,
+        "chunk_rank": null
+      },
+      {
+        "question": "How does CLIP perform zero-shot image classification without task-specific training data?",
+        "k": 8,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": false,
+        "page_rank": null,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "What is the core idea behind LoRA for adapting large language models?",
+        "k": 8,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 1,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "Which weight matrices in the Transformer's attention mechanism does LoRA typically adapt?",
+        "k": 8,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 7,
+        "chunk_hit": true,
+        "chunk_rank": 8
+      },
+      {
+        "question": "Does LoRA introduce additional inference latency compared to a fully fine-tuned model?",
+        "k": 8,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 7,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "What two components make up a Retrieval-Augmented Generation (RAG) model?",
+        "k": 8,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 6,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "What retriever architecture does the RAG paper use to fetch supporting documents?",
+        "k": 8,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 5,
+        "chunk_hit": false,
+        "chunk_rank": null
+      },
+      {
+        "question": "What is the difference between the RAG-Sequence and RAG-Token model variants?",
+        "k": 8,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 1,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "How is the reward model trained in the human-preference-based reinforcement learning approach described in this paper?",
+        "k": 8,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": false,
+        "page_rank": null,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "What kinds of tasks were used to evaluate this human-feedback-based reinforcement learning approach?",
+        "k": 8,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 5,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "What happens during the forward process in a denoising diffusion probabilistic model?",
+        "k": 8,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 1,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "What training objective is used to optimize denoising diffusion probabilistic models?",
+        "k": 8,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 1,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "What is chain-of-thought prompting?",
+        "k": 8,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 7,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "What category of tasks shows the largest improvement from chain-of-thought prompting?",
+        "k": 8,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 2,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "At what model scale does chain-of-thought prompting begin to improve performance?",
+        "k": 8,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 1,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "What three training stages make up the InstructGPT pipeline?",
+        "k": 8,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 4,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "What reinforcement learning algorithm is used to fine-tune InstructGPT against the reward model?",
+        "k": 8,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 4,
+        "chunk_hit": false,
+        "chunk_rank": null
+      },
+      {
+        "question": "How does InstructGPT compare to the base GPT-3 model in human preference evaluations?",
+        "k": 8,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 6,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "What claim does the LLaMA paper make about the availability of its training data sources?",
+        "k": 8,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 1,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "How many training tokens was LLaMA trained on?",
+        "k": 8,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": false,
+        "page_rank": null,
+        "chunk_hit": false,
+        "chunk_rank": null
+      },
+      {
+        "question": "What problem do residual connections address in very deep neural networks?",
+        "k": 8,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 2,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "What is a shortcut (skip) connection in a residual block?",
+        "k": 8,
+        "document_hit": true,
+        "document_rank": 2,
+        "page_hit": true,
+        "page_rank": 2,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "How does LoRA's parameter-efficient fine-tuning approach differ from the full-parameter fine-tuning used to train InstructGPT's supervised policy?",
+        "k": 8,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": false,
+        "page_rank": null,
+        "chunk_hit": null,
+        "chunk_rank": null
+      },
+      {
+        "question": "How does the retrieval-augmented approach in RAG differ from relying purely on a large pre-trained language model's parametric knowledge, as GPT-3 does?",
+        "k": 8,
+        "document_hit": true,
+        "document_rank": 1,
+        "page_hit": true,
+        "page_rank": 7,
+        "chunk_hit": null,
+        "chunk_rank": null
       }
     ]
   },
   "generation": [
     {
       "question": "How many identical layers are stacked in the Transformer's encoder?",
-      "answer_text": "According to excerpt [1], the Transformer's encoder is composed of a stack of N = 6 identical layers.",
+      "answer_text": "According to [1], the Transformer's encoder is composed of a stack of N = 6 identical layers.",
       "should_refuse": false,
       "refused": false,
       "citation_correct": true,
       "page_match": true,
       "groundedness_score": 5,
-      "retrieval_latency_ms": 6.796375149860978,
-      "generation_latency_ms": 444.88387485034764,
-      "total_latency_ms": 451.6802500002086
+      "retrieval_latency_ms": 8.270540973171592,
+      "generation_latency_ms": 554.4596251565963,
+      "total_latency_ms": 562.7301661297679
     },
     {
       "question": "What optimizer was used to train the Transformer model?",
-      "answer_text": "The provided excerpts do not mention the optimizer used to train the Transformer model. The excerpts discuss model variations, results, and hyperparameters such as dropout and label smoothing, but do not provide information about the optimizer. Therefore, it is not possible to answer this question based on the given excerpts.",
+      "answer_text": "The excerpts provided do not contain enough information to answer the question about the optimizer used to train the Transformer model. None of the excerpts [1] through [5] mention the optimizer used.",
       "should_refuse": false,
       "refused": true,
       "citation_correct": true,
       "page_match": true,
       "groundedness_score": 5,
-      "retrieval_latency_ms": 16.605249838903546,
-      "generation_latency_ms": 414.18895893730223,
-      "total_latency_ms": 430.7942087762058
+      "retrieval_latency_ms": 28.281999984756112,
+      "generation_latency_ms": 418.4049169998616,
+      "total_latency_ms": 446.6869169846177
     },
     {
       "question": "How does the Transformer encode information about token position in a sequence?",
-      "answer_text": "The Transformer encodes information about token position in a sequence by adding \"positional encodings\" to the input embeddings at the bottoms of the encoder and decoder stacks [1]. These positional encodings have the same dimension as the embeddings and are added to them. The specific method used in the paper is to use sine and cosine functions of different frequencies, where the position and dimension of the model are used to calculate the encoding [1].",
+      "answer_text": "The Transformer encodes information about token position in a sequence by adding \"positional encodings\" to the input embeddings [1]. These positional encodings have the same dimension as the embeddings, allowing them to be summed. The specific method used in the provided excerpt is to use sine and cosine functions of different frequencies to generate the positional encodings [1]. Additionally, other methods of encoding positional information are mentioned, such as learning and adding positional embeddings to the inputs at the beginning of each layer [2, 4], but the exact method used may vary depending on the specific implementation.",
       "should_refuse": false,
       "refused": false,
       "citation_correct": true,
       "page_match": true,
       "groundedness_score": 5,
-      "retrieval_latency_ms": 19.198792055249214,
-      "generation_latency_ms": 694.1311659757048,
-      "total_latency_ms": 713.329958030954
+      "retrieval_latency_ms": 17.709957901388407,
+      "generation_latency_ms": 629.0440419688821,
+      "total_latency_ms": 646.7539998702705
     },
     {
       "question": "What tokenization scheme does the Transformer use for its training vocabulary?",
-      "answer_text": "The excerpts do not contain enough information to answer what tokenization scheme the Transformer uses for its training vocabulary. They mention \"WordPiece tokens\" [1], but do not provide details on the tokenization scheme itself.",
+      "answer_text": "The excerpts provided do not contain enough information to answer the question about the specific tokenization scheme used by the Transformer for its training vocabulary. The excerpts mention tokenization in the context of the training dataset [3], but they do not provide details about the tokenization scheme itself.",
       "should_refuse": false,
       "refused": true,
-      "citation_correct": true,
-      "page_match": true,
+      "citation_correct": false,
+      "page_match": false,
       "groundedness_score": 5,
-      "retrieval_latency_ms": 69.12591704167426,
-      "generation_latency_ms": 595.6029579974711,
-      "total_latency_ms": 664.7288750391454
+      "retrieval_latency_ms": 18.276874907314777,
+      "generation_latency_ms": 413.7015410233289,
+      "total_latency_ms": 431.9784159306437
     },
     {
       "question": "What decoding strategy is used to generate translations at inference time?",
-      "answer_text": "The excerpts provided do not explicitly state the decoding strategy used to generate translations at inference time. However, according to [4], the model is auto-regressive, consuming the previously generated symbols as additional input when generating the next. This suggests that the model uses a sequential decoding strategy, where each output symbol is generated one at a time, conditioned on the previously generated symbols. But the specific decoding strategy (e.g. greedy decoding, beam search) is not mentioned in the excerpts.",
+      "answer_text": "The provided excerpts do not contain enough information to determine the decoding strategy used to generate translations at inference time. The excerpts mention \"Thorough Decoding\" and \"Fast Decoding\" in [3], but these are related to a specific task and do not provide a general answer to the question. Additionally, [2] mentions various papers related to machine translation, but does not specify a decoding strategy. Therefore, I cannot provide a definitive answer based on the given excerpts.",
       "should_refuse": false,
-      "refused": false,
-      "citation_correct": true,
-      "page_match": false,
-      "groundedness_score": 5,
-      "retrieval_latency_ms": 19.50266701169312,
-      "generation_latency_ms": 971.1357499472797,
-      "total_latency_ms": 990.6384169589728
-    },
-    {
-      "question": "What is label smoothing and how was it used when training the Transformer?",
-      "answer_text": "According to excerpt [1], label smoothing is a technique used during training where the model is employed with a label smoothing value of \u03b5ls = 0.1. This means that the model learns to be more unsure, which hurts perplexity but improves accuracy and BLEU score. In the context of the Transformer, label smoothing was used with a value of \u03b5ls = 0.1, as mentioned in excerpt [1]. However, the exact details of how label smoothing was implemented are not provided in the excerpts.",
-      "should_refuse": false,
-      "refused": false,
-      "citation_correct": true,
-      "page_match": true,
-      "groundedness_score": 5,
-      "retrieval_latency_ms": 60.82479190081358,
-      "generation_latency_ms": 706.6974169574678,
-      "total_latency_ms": 767.5222088582814
-    },
-    {
-      "question": "What sub-layers make up each layer of the Transformer's decoder?",
-      "answer_text": "According to excerpt [3], each layer of the Transformer's decoder is composed of three sub-layers: \n\n1. a multi-head self-attention mechanism, \n2. a multi-head attention mechanism over the output of the encoder stack, and \n3. a simple, positionwise fully connected feed-forward network.\n\nThese sub-layers are similar to those in the encoder, with the addition of the third sub-layer that performs attention over the encoder's output.",
-      "should_refuse": false,
-      "refused": false,
-      "citation_correct": true,
-      "page_match": true,
-      "groundedness_score": 5,
-      "retrieval_latency_ms": 83.26504193246365,
-      "generation_latency_ms": 5841.646665940061,
-      "total_latency_ms": 5924.911707872525
-    },
-    {
-      "question": "How is dropout applied during training of the Transformer?",
-      "answer_text": "According to excerpt [1], dropout is applied to the output of each sub-layer, before it is added to the sub-layer input and normalized. Additionally, dropout is applied to the sums of the embeddings and the positional encodings in both the encoder and decoder stacks. The rate of dropout (Pdrop) used for the base model is 0.1, as mentioned in excerpt [3].",
-      "should_refuse": false,
-      "refused": false,
-      "citation_correct": true,
-      "page_match": true,
-      "groundedness_score": 5,
-      "retrieval_latency_ms": 348.1348331551999,
-      "generation_latency_ms": 5590.170708019286,
-      "total_latency_ms": 5938.305541174486
-    },
-    {
-      "question": "What are the two unsupervised pre-training tasks used to train BERT?",
-      "answer_text": "The excerpts provided do not explicitly mention the two unsupervised pre-training tasks used to train BERT. However, [1] and [4] mention \"NSP\" and \"Mask LM\" which could be related to the pre-training tasks, but their meanings are not explicitly defined in the provided excerpts. Therefore, I cannot provide a definitive answer based on the given information.",
-      "should_refuse": false,
-      "refused": false,
-      "citation_correct": true,
-      "page_match": true,
-      "groundedness_score": 5,
-      "retrieval_latency_ms": 119.39437501132488,
-      "generation_latency_ms": 3661.392915993929,
-      "total_latency_ms": 3780.787291005254
-    },
-    {
-      "question": "During BERT pre-training, what fraction of the time is a masked position actually replaced with the [MASK] token?",
-      "answer_text": "According to excerpts [1] and [2], during BERT pre-training, a masked position is replaced with the [MASK] token 80% of the time. [1] states \"we replace the i-th token with (1) the [MASK] token 80% of the time\" and [2] also mentions \"80% of the time: Replace the word with the [MASK] token\".",
-      "should_refuse": false,
-      "refused": false,
-      "citation_correct": true,
-      "page_match": true,
-      "groundedness_score": 5,
-      "retrieval_latency_ms": 88.9007078949362,
-      "generation_latency_ms": 6598.305459134281,
-      "total_latency_ms": 6687.206167029217
-    },
-    {
-      "question": "What two text corpora were used to pre-train BERT?",
-      "answer_text": "According to [1] and [5], the two text corpora used to pre-train BERT were the BooksCorpus (800M words) and Wikipedia (2,500M words).",
-      "should_refuse": false,
-      "refused": false,
-      "citation_correct": true,
-      "page_match": true,
-      "groundedness_score": 5,
-      "retrieval_latency_ms": 142.65099982731044,
-      "generation_latency_ms": 6040.567208081484,
-      "total_latency_ms": 6183.218207908794
-    },
-    {
-      "question": "How many parameters does BERT-large have?",
-      "answer_text": "According to [1] and [2], BERTLARGE contains 340M parameters.",
-      "should_refuse": false,
-      "refused": false,
-      "citation_correct": true,
-      "page_match": true,
-      "groundedness_score": 5,
-      "retrieval_latency_ms": 82.86433317698538,
-      "generation_latency_ms": 5603.587416931987,
-      "total_latency_ms": 5686.451750108972
-    },
-    {
-      "question": "What benchmark dataset is used to evaluate question-answering performance in the BERT paper?",
-      "answer_text": "The benchmark dataset used to evaluate question-answering performance in the BERT paper is SQuAD v1.1, as mentioned in [1] and [2], and also SQuAD v2.0, as mentioned in [3]. SQuAD stands for Stanford Question Answering Dataset.",
-      "should_refuse": false,
-      "refused": false,
-      "citation_correct": true,
-      "page_match": true,
-      "groundedness_score": 5,
-      "retrieval_latency_ms": 76.80762489326298,
-      "generation_latency_ms": 6692.561459029093,
-      "total_latency_ms": 6769.369083922356
-    },
-    {
-      "question": "What is the main architectural difference between BERT's and OpenAI GPT's self-attention?",
-      "answer_text": "The main architectural difference between BERT's and OpenAI GPT's self-attention is that BERT uses bidirectional self-attention, while OpenAI GPT uses constrained self-attention where every token can only attend to context to its left [1, 3, 4].",
-      "should_refuse": false,
-      "refused": false,
-      "citation_correct": true,
-      "page_match": true,
-      "groundedness_score": 5,
-      "retrieval_latency_ms": 288.9974999707192,
-      "generation_latency_ms": 4500.723208067939,
-      "total_latency_ms": 4789.720708038658
-    },
-    {
-      "question": "What GLUE benchmark score does BERT achieve?",
-      "answer_text": "According to excerpt [2], BERTLARGE obtains a score of 80.5 on the official GLUE leaderboard.",
-      "should_refuse": false,
-      "refused": false,
-      "citation_correct": true,
-      "page_match": false,
-      "groundedness_score": 5,
-      "retrieval_latency_ms": 84.91900004446507,
-      "generation_latency_ms": 5430.37216598168,
-      "total_latency_ms": 5515.291166026145
-    },
-    {
-      "question": "What is the difference between BERT's masked language model objective and a traditional left-to-right language model?",
-      "answer_text": "According to [1], the main difference is that BERT's masked language model objective is pre-trained using a bidirectional model, whereas traditional language models are pre-trained left-to-right or right-to-left. This allows BERT to capture more contextual information, as it can \"see\" the entire input sequence, not just the tokens to the left or right of the target word. Additionally, [1] mentions that standard conditional language models can only be trained left-to-right or right-to-left, as bidirectional conditioning would allow each word to indirectly \"see itself\". In contrast, BERT's masked language model objective masks some of the input tokens and predicts them, allowing the model to learn a bidirectional representation of the input sequence.",
-      "should_refuse": false,
-      "refused": false,
-      "citation_correct": true,
-      "page_match": false,
-      "groundedness_score": 5,
-      "retrieval_latency_ms": 118.7436250038445,
-      "generation_latency_ms": 6026.115542044863,
-      "total_latency_ms": 6144.859167048708
-    },
-    {
-      "question": "What are the limitations of Chain-of-Thought prompting?",
-      "answer_text": "The excerpts provided do not contain enough information to answer the question about the limitations of Chain-of-Thought prompting. The excerpts appear to be related to attention mechanisms in neural networks, specifically in the context of natural language processing, but do not mention Chain-of-Thought prompting or its limitations. Therefore, I cannot provide a definitive answer based on the given excerpts.",
-      "should_refuse": true,
       "refused": true,
       "citation_correct": true,
-      "page_match": null,
+      "page_match": false,
       "groundedness_score": 5,
-      "retrieval_latency_ms": 346.3713750243187,
-      "generation_latency_ms": 5634.177124826238,
-      "total_latency_ms": 5980.548499850556
-    },
-    {
-      "question": "How does Reinforcement Learning from Human Feedback (RLHF) work?",
-      "answer_text": "The provided excerpts [1] through [5] do not contain information about Reinforcement Learning from Human Feedback (RLHF). Therefore, I cannot provide an explanation of how RLHF works based on the given excerpts.",
-      "should_refuse": true,
-      "refused": true,
-      "citation_correct": true,
-      "page_match": null,
-      "groundedness_score": 5,
-      "retrieval_latency_ms": 410.5603329371661,
-      "generation_latency_ms": 5552.795707946643,
-      "total_latency_ms": 5963.356040883809
+      "retrieval_latency_ms": 20.255292067304254,
+      "generation_latency_ms": 500.3922919277102,
+      "total_latency_ms": 520.6475839950144
     }
+  ],
+  "failed_questions": [
+    "What is label smoothing and how was it used when training the Transformer?",
+    "What sub-layers make up each layer of the Transformer's decoder?",
+    "How is dropout applied during training of the Transformer?",
+    "What are the two unsupervised pre-training tasks used to train BERT?",
+    "During BERT pre-training, what fraction of the time is a masked position actually replaced with the [MASK] token?",
+    "What two text corpora were used to pre-train BERT?",
+    "How many parameters does BERT-large have?",
+    "What benchmark dataset is used to evaluate question-answering performance in the BERT paper?",
+    "What is the main architectural difference between BERT's and OpenAI GPT's self-attention?",
+    "What GLUE benchmark score does BERT achieve?",
+    "What is the difference between BERT's masked language model objective and a traditional left-to-right language model?",
+    "What are the limitations of Chain-of-Thought prompting discussed in the paper that introduced it?",
+    "How many parameters does the largest GPT-3 model have?",
+    "What is few-shot learning as described in the GPT-3 paper?",
+    "What is the maximum context window size, in tokens, that GPT-3 processes?",
+    "How does GPT-3's approach to few-shot learning differ from traditional fine-tuning?",
+    "What patch size does the Vision Transformer use to split an input image into a sequence of tokens?",
+    "What large-scale dataset was the Vision Transformer pre-trained on before evaluation?",
+    "How does the Vision Transformer's performance compare to convolutional neural networks when trained on smaller datasets?",
+    "What pre-training objective does CLIP use to align images and text?",
+    "How many image-text pairs were used to train CLIP?",
+    "How does CLIP perform zero-shot image classification without task-specific training data?",
+    "What is the core idea behind LoRA for adapting large language models?",
+    "Which weight matrices in the Transformer's attention mechanism does LoRA typically adapt?",
+    "Does LoRA introduce additional inference latency compared to a fully fine-tuned model?",
+    "What two components make up a Retrieval-Augmented Generation (RAG) model?",
+    "What retriever architecture does the RAG paper use to fetch supporting documents?",
+    "What is the difference between the RAG-Sequence and RAG-Token model variants?",
+    "How is the reward model trained in the human-preference-based reinforcement learning approach described in this paper?",
+    "What kinds of tasks were used to evaluate this human-feedback-based reinforcement learning approach?",
+    "What happens during the forward process in a denoising diffusion probabilistic model?",
+    "What training objective is used to optimize denoising diffusion probabilistic models?",
+    "What is chain-of-thought prompting?",
+    "What category of tasks shows the largest improvement from chain-of-thought prompting?",
+    "At what model scale does chain-of-thought prompting begin to improve performance?",
+    "What three training stages make up the InstructGPT pipeline?",
+    "What reinforcement learning algorithm is used to fine-tune InstructGPT against the reward model?",
+    "How does InstructGPT compare to the base GPT-3 model in human preference evaluations?",
+    "What claim does the LLaMA paper make about the availability of its training data sources?",
+    "How many training tokens was LLaMA trained on?",
+    "What problem do residual connections address in very deep neural networks?",
+    "What is a shortcut (skip) connection in a residual block?",
+    "How does LoRA's parameter-efficient fine-tuning approach differ from the full-parameter fine-tuning used to train InstructGPT's supervised policy?",
+    "How does the retrieval-augmented approach in RAG differ from relying purely on a large pre-trained language model's parametric knowledge, as GPT-3 does?",
+    "What is the AlphaFold protein structure prediction algorithm?",
+    "How does federated learning preserve data privacy across distributed devices?",
+    "What is Transformer-XL's approach to handling context beyond a fixed-length window?",
+    "What is the Mixture-of-Experts architecture used for scaling neural networks?",
+    "How does the Word2Vec skip-gram model learn word embeddings?"
   ]
 }
