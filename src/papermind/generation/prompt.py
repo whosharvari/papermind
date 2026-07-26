@@ -8,12 +8,15 @@ SYSTEM_PROMPT = (
 )
 
 
-def build_messages(question: str, retrieved: list[RetrievedChunk]) -> list[dict[str, str]]:
-    excerpts = "\n\n".join(
+def format_excerpts(retrieved: list[RetrievedChunk]) -> str:
+    return "\n\n".join(
         f"[{i}] ({r.chunk.source_file}, page {r.chunk.page_number})\n{r.chunk.text}"
         for i, r in enumerate(retrieved, start=1)
     )
-    user_content = f"Excerpts:\n\n{excerpts}\n\nQuestion: {question}"
+
+
+def build_messages(question: str, retrieved: list[RetrievedChunk]) -> list[dict[str, str]]:
+    user_content = f"Excerpts:\n\n{format_excerpts(retrieved)}\n\nQuestion: {question}"
     return [
         {"role": "system", "content": SYSTEM_PROMPT},
         {"role": "user", "content": user_content},

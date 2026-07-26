@@ -1,0 +1,516 @@
+{
+  "sweep": {
+    "3": [
+      {
+        "question": "How many identical layers are stacked in the Transformer's encoder?",
+        "k": 3,
+        "hit": true,
+        "rank": 1
+      },
+      {
+        "question": "What optimizer was used to train the Transformer model?",
+        "k": 3,
+        "hit": true,
+        "rank": 1
+      },
+      {
+        "question": "How does the Transformer encode information about token position in a sequence?",
+        "k": 3,
+        "hit": true,
+        "rank": 1
+      },
+      {
+        "question": "What tokenization scheme does the Transformer use for its training vocabulary?",
+        "k": 3,
+        "hit": true,
+        "rank": 3
+      },
+      {
+        "question": "What decoding strategy is used to generate translations at inference time?",
+        "k": 3,
+        "hit": true,
+        "rank": 1
+      },
+      {
+        "question": "What is label smoothing and how was it used when training the Transformer?",
+        "k": 3,
+        "hit": true,
+        "rank": 1
+      },
+      {
+        "question": "What sub-layers make up each layer of the Transformer's decoder?",
+        "k": 3,
+        "hit": true,
+        "rank": 1
+      },
+      {
+        "question": "How is dropout applied during training of the Transformer?",
+        "k": 3,
+        "hit": true,
+        "rank": 1
+      },
+      {
+        "question": "What are the two unsupervised pre-training tasks used to train BERT?",
+        "k": 3,
+        "hit": true,
+        "rank": 1
+      },
+      {
+        "question": "During BERT pre-training, what fraction of the time is a masked position actually replaced with the [MASK] token?",
+        "k": 3,
+        "hit": true,
+        "rank": 1
+      },
+      {
+        "question": "What two text corpora were used to pre-train BERT?",
+        "k": 3,
+        "hit": true,
+        "rank": 1
+      },
+      {
+        "question": "How many parameters does BERT-large have?",
+        "k": 3,
+        "hit": true,
+        "rank": 1
+      },
+      {
+        "question": "What benchmark dataset is used to evaluate question-answering performance in the BERT paper?",
+        "k": 3,
+        "hit": true,
+        "rank": 1
+      },
+      {
+        "question": "What is the main architectural difference between BERT's and OpenAI GPT's self-attention?",
+        "k": 3,
+        "hit": true,
+        "rank": 1
+      },
+      {
+        "question": "What GLUE benchmark score does BERT achieve?",
+        "k": 3,
+        "hit": true,
+        "rank": 1
+      },
+      {
+        "question": "What is the difference between BERT's masked language model objective and a traditional left-to-right language model?",
+        "k": 3,
+        "hit": true,
+        "rank": 1
+      }
+    ],
+    "5": [
+      {
+        "question": "How many identical layers are stacked in the Transformer's encoder?",
+        "k": 5,
+        "hit": true,
+        "rank": 1
+      },
+      {
+        "question": "What optimizer was used to train the Transformer model?",
+        "k": 5,
+        "hit": true,
+        "rank": 1
+      },
+      {
+        "question": "How does the Transformer encode information about token position in a sequence?",
+        "k": 5,
+        "hit": true,
+        "rank": 1
+      },
+      {
+        "question": "What tokenization scheme does the Transformer use for its training vocabulary?",
+        "k": 5,
+        "hit": true,
+        "rank": 3
+      },
+      {
+        "question": "What decoding strategy is used to generate translations at inference time?",
+        "k": 5,
+        "hit": true,
+        "rank": 1
+      },
+      {
+        "question": "What is label smoothing and how was it used when training the Transformer?",
+        "k": 5,
+        "hit": true,
+        "rank": 1
+      },
+      {
+        "question": "What sub-layers make up each layer of the Transformer's decoder?",
+        "k": 5,
+        "hit": true,
+        "rank": 1
+      },
+      {
+        "question": "How is dropout applied during training of the Transformer?",
+        "k": 5,
+        "hit": true,
+        "rank": 1
+      },
+      {
+        "question": "What are the two unsupervised pre-training tasks used to train BERT?",
+        "k": 5,
+        "hit": true,
+        "rank": 1
+      },
+      {
+        "question": "During BERT pre-training, what fraction of the time is a masked position actually replaced with the [MASK] token?",
+        "k": 5,
+        "hit": true,
+        "rank": 1
+      },
+      {
+        "question": "What two text corpora were used to pre-train BERT?",
+        "k": 5,
+        "hit": true,
+        "rank": 1
+      },
+      {
+        "question": "How many parameters does BERT-large have?",
+        "k": 5,
+        "hit": true,
+        "rank": 1
+      },
+      {
+        "question": "What benchmark dataset is used to evaluate question-answering performance in the BERT paper?",
+        "k": 5,
+        "hit": true,
+        "rank": 1
+      },
+      {
+        "question": "What is the main architectural difference between BERT's and OpenAI GPT's self-attention?",
+        "k": 5,
+        "hit": true,
+        "rank": 1
+      },
+      {
+        "question": "What GLUE benchmark score does BERT achieve?",
+        "k": 5,
+        "hit": true,
+        "rank": 1
+      },
+      {
+        "question": "What is the difference between BERT's masked language model objective and a traditional left-to-right language model?",
+        "k": 5,
+        "hit": true,
+        "rank": 1
+      }
+    ],
+    "8": [
+      {
+        "question": "How many identical layers are stacked in the Transformer's encoder?",
+        "k": 8,
+        "hit": true,
+        "rank": 1
+      },
+      {
+        "question": "What optimizer was used to train the Transformer model?",
+        "k": 8,
+        "hit": true,
+        "rank": 1
+      },
+      {
+        "question": "How does the Transformer encode information about token position in a sequence?",
+        "k": 8,
+        "hit": true,
+        "rank": 1
+      },
+      {
+        "question": "What tokenization scheme does the Transformer use for its training vocabulary?",
+        "k": 8,
+        "hit": true,
+        "rank": 3
+      },
+      {
+        "question": "What decoding strategy is used to generate translations at inference time?",
+        "k": 8,
+        "hit": true,
+        "rank": 1
+      },
+      {
+        "question": "What is label smoothing and how was it used when training the Transformer?",
+        "k": 8,
+        "hit": true,
+        "rank": 1
+      },
+      {
+        "question": "What sub-layers make up each layer of the Transformer's decoder?",
+        "k": 8,
+        "hit": true,
+        "rank": 1
+      },
+      {
+        "question": "How is dropout applied during training of the Transformer?",
+        "k": 8,
+        "hit": true,
+        "rank": 1
+      },
+      {
+        "question": "What are the two unsupervised pre-training tasks used to train BERT?",
+        "k": 8,
+        "hit": true,
+        "rank": 1
+      },
+      {
+        "question": "During BERT pre-training, what fraction of the time is a masked position actually replaced with the [MASK] token?",
+        "k": 8,
+        "hit": true,
+        "rank": 1
+      },
+      {
+        "question": "What two text corpora were used to pre-train BERT?",
+        "k": 8,
+        "hit": true,
+        "rank": 1
+      },
+      {
+        "question": "How many parameters does BERT-large have?",
+        "k": 8,
+        "hit": true,
+        "rank": 1
+      },
+      {
+        "question": "What benchmark dataset is used to evaluate question-answering performance in the BERT paper?",
+        "k": 8,
+        "hit": true,
+        "rank": 1
+      },
+      {
+        "question": "What is the main architectural difference between BERT's and OpenAI GPT's self-attention?",
+        "k": 8,
+        "hit": true,
+        "rank": 1
+      },
+      {
+        "question": "What GLUE benchmark score does BERT achieve?",
+        "k": 8,
+        "hit": true,
+        "rank": 1
+      },
+      {
+        "question": "What is the difference between BERT's masked language model objective and a traditional left-to-right language model?",
+        "k": 8,
+        "hit": true,
+        "rank": 1
+      }
+    ]
+  },
+  "generation": [
+    {
+      "question": "How many identical layers are stacked in the Transformer's encoder?",
+      "answer_text": "According to excerpt [1], the Transformer's encoder is composed of a stack of N = 6 identical layers.",
+      "should_refuse": false,
+      "refused": false,
+      "citation_correct": true,
+      "page_match": true,
+      "groundedness_score": 5,
+      "retrieval_latency_ms": 6.796375149860978,
+      "generation_latency_ms": 444.88387485034764,
+      "total_latency_ms": 451.6802500002086
+    },
+    {
+      "question": "What optimizer was used to train the Transformer model?",
+      "answer_text": "The provided excerpts do not mention the optimizer used to train the Transformer model. The excerpts discuss model variations, results, and hyperparameters such as dropout and label smoothing, but do not provide information about the optimizer. Therefore, it is not possible to answer this question based on the given excerpts.",
+      "should_refuse": false,
+      "refused": true,
+      "citation_correct": true,
+      "page_match": true,
+      "groundedness_score": 5,
+      "retrieval_latency_ms": 16.605249838903546,
+      "generation_latency_ms": 414.18895893730223,
+      "total_latency_ms": 430.7942087762058
+    },
+    {
+      "question": "How does the Transformer encode information about token position in a sequence?",
+      "answer_text": "The Transformer encodes information about token position in a sequence by adding \"positional encodings\" to the input embeddings at the bottoms of the encoder and decoder stacks [1]. These positional encodings have the same dimension as the embeddings and are added to them. The specific method used in the paper is to use sine and cosine functions of different frequencies, where the position and dimension of the model are used to calculate the encoding [1].",
+      "should_refuse": false,
+      "refused": false,
+      "citation_correct": true,
+      "page_match": true,
+      "groundedness_score": 5,
+      "retrieval_latency_ms": 19.198792055249214,
+      "generation_latency_ms": 694.1311659757048,
+      "total_latency_ms": 713.329958030954
+    },
+    {
+      "question": "What tokenization scheme does the Transformer use for its training vocabulary?",
+      "answer_text": "The excerpts do not contain enough information to answer what tokenization scheme the Transformer uses for its training vocabulary. They mention \"WordPiece tokens\" [1], but do not provide details on the tokenization scheme itself.",
+      "should_refuse": false,
+      "refused": true,
+      "citation_correct": true,
+      "page_match": true,
+      "groundedness_score": 5,
+      "retrieval_latency_ms": 69.12591704167426,
+      "generation_latency_ms": 595.6029579974711,
+      "total_latency_ms": 664.7288750391454
+    },
+    {
+      "question": "What decoding strategy is used to generate translations at inference time?",
+      "answer_text": "The excerpts provided do not explicitly state the decoding strategy used to generate translations at inference time. However, according to [4], the model is auto-regressive, consuming the previously generated symbols as additional input when generating the next. This suggests that the model uses a sequential decoding strategy, where each output symbol is generated one at a time, conditioned on the previously generated symbols. But the specific decoding strategy (e.g. greedy decoding, beam search) is not mentioned in the excerpts.",
+      "should_refuse": false,
+      "refused": false,
+      "citation_correct": true,
+      "page_match": false,
+      "groundedness_score": 5,
+      "retrieval_latency_ms": 19.50266701169312,
+      "generation_latency_ms": 971.1357499472797,
+      "total_latency_ms": 990.6384169589728
+    },
+    {
+      "question": "What is label smoothing and how was it used when training the Transformer?",
+      "answer_text": "According to excerpt [1], label smoothing is a technique used during training where the model is employed with a label smoothing value of \u03b5ls = 0.1. This means that the model learns to be more unsure, which hurts perplexity but improves accuracy and BLEU score. In the context of the Transformer, label smoothing was used with a value of \u03b5ls = 0.1, as mentioned in excerpt [1]. However, the exact details of how label smoothing was implemented are not provided in the excerpts.",
+      "should_refuse": false,
+      "refused": false,
+      "citation_correct": true,
+      "page_match": true,
+      "groundedness_score": 5,
+      "retrieval_latency_ms": 60.82479190081358,
+      "generation_latency_ms": 706.6974169574678,
+      "total_latency_ms": 767.5222088582814
+    },
+    {
+      "question": "What sub-layers make up each layer of the Transformer's decoder?",
+      "answer_text": "According to excerpt [3], each layer of the Transformer's decoder is composed of three sub-layers: \n\n1. a multi-head self-attention mechanism, \n2. a multi-head attention mechanism over the output of the encoder stack, and \n3. a simple, positionwise fully connected feed-forward network.\n\nThese sub-layers are similar to those in the encoder, with the addition of the third sub-layer that performs attention over the encoder's output.",
+      "should_refuse": false,
+      "refused": false,
+      "citation_correct": true,
+      "page_match": true,
+      "groundedness_score": 5,
+      "retrieval_latency_ms": 83.26504193246365,
+      "generation_latency_ms": 5841.646665940061,
+      "total_latency_ms": 5924.911707872525
+    },
+    {
+      "question": "How is dropout applied during training of the Transformer?",
+      "answer_text": "According to excerpt [1], dropout is applied to the output of each sub-layer, before it is added to the sub-layer input and normalized. Additionally, dropout is applied to the sums of the embeddings and the positional encodings in both the encoder and decoder stacks. The rate of dropout (Pdrop) used for the base model is 0.1, as mentioned in excerpt [3].",
+      "should_refuse": false,
+      "refused": false,
+      "citation_correct": true,
+      "page_match": true,
+      "groundedness_score": 5,
+      "retrieval_latency_ms": 348.1348331551999,
+      "generation_latency_ms": 5590.170708019286,
+      "total_latency_ms": 5938.305541174486
+    },
+    {
+      "question": "What are the two unsupervised pre-training tasks used to train BERT?",
+      "answer_text": "The excerpts provided do not explicitly mention the two unsupervised pre-training tasks used to train BERT. However, [1] and [4] mention \"NSP\" and \"Mask LM\" which could be related to the pre-training tasks, but their meanings are not explicitly defined in the provided excerpts. Therefore, I cannot provide a definitive answer based on the given information.",
+      "should_refuse": false,
+      "refused": false,
+      "citation_correct": true,
+      "page_match": true,
+      "groundedness_score": 5,
+      "retrieval_latency_ms": 119.39437501132488,
+      "generation_latency_ms": 3661.392915993929,
+      "total_latency_ms": 3780.787291005254
+    },
+    {
+      "question": "During BERT pre-training, what fraction of the time is a masked position actually replaced with the [MASK] token?",
+      "answer_text": "According to excerpts [1] and [2], during BERT pre-training, a masked position is replaced with the [MASK] token 80% of the time. [1] states \"we replace the i-th token with (1) the [MASK] token 80% of the time\" and [2] also mentions \"80% of the time: Replace the word with the [MASK] token\".",
+      "should_refuse": false,
+      "refused": false,
+      "citation_correct": true,
+      "page_match": true,
+      "groundedness_score": 5,
+      "retrieval_latency_ms": 88.9007078949362,
+      "generation_latency_ms": 6598.305459134281,
+      "total_latency_ms": 6687.206167029217
+    },
+    {
+      "question": "What two text corpora were used to pre-train BERT?",
+      "answer_text": "According to [1] and [5], the two text corpora used to pre-train BERT were the BooksCorpus (800M words) and Wikipedia (2,500M words).",
+      "should_refuse": false,
+      "refused": false,
+      "citation_correct": true,
+      "page_match": true,
+      "groundedness_score": 5,
+      "retrieval_latency_ms": 142.65099982731044,
+      "generation_latency_ms": 6040.567208081484,
+      "total_latency_ms": 6183.218207908794
+    },
+    {
+      "question": "How many parameters does BERT-large have?",
+      "answer_text": "According to [1] and [2], BERTLARGE contains 340M parameters.",
+      "should_refuse": false,
+      "refused": false,
+      "citation_correct": true,
+      "page_match": true,
+      "groundedness_score": 5,
+      "retrieval_latency_ms": 82.86433317698538,
+      "generation_latency_ms": 5603.587416931987,
+      "total_latency_ms": 5686.451750108972
+    },
+    {
+      "question": "What benchmark dataset is used to evaluate question-answering performance in the BERT paper?",
+      "answer_text": "The benchmark dataset used to evaluate question-answering performance in the BERT paper is SQuAD v1.1, as mentioned in [1] and [2], and also SQuAD v2.0, as mentioned in [3]. SQuAD stands for Stanford Question Answering Dataset.",
+      "should_refuse": false,
+      "refused": false,
+      "citation_correct": true,
+      "page_match": true,
+      "groundedness_score": 5,
+      "retrieval_latency_ms": 76.80762489326298,
+      "generation_latency_ms": 6692.561459029093,
+      "total_latency_ms": 6769.369083922356
+    },
+    {
+      "question": "What is the main architectural difference between BERT's and OpenAI GPT's self-attention?",
+      "answer_text": "The main architectural difference between BERT's and OpenAI GPT's self-attention is that BERT uses bidirectional self-attention, while OpenAI GPT uses constrained self-attention where every token can only attend to context to its left [1, 3, 4].",
+      "should_refuse": false,
+      "refused": false,
+      "citation_correct": true,
+      "page_match": true,
+      "groundedness_score": 5,
+      "retrieval_latency_ms": 288.9974999707192,
+      "generation_latency_ms": 4500.723208067939,
+      "total_latency_ms": 4789.720708038658
+    },
+    {
+      "question": "What GLUE benchmark score does BERT achieve?",
+      "answer_text": "According to excerpt [2], BERTLARGE obtains a score of 80.5 on the official GLUE leaderboard.",
+      "should_refuse": false,
+      "refused": false,
+      "citation_correct": true,
+      "page_match": false,
+      "groundedness_score": 5,
+      "retrieval_latency_ms": 84.91900004446507,
+      "generation_latency_ms": 5430.37216598168,
+      "total_latency_ms": 5515.291166026145
+    },
+    {
+      "question": "What is the difference between BERT's masked language model objective and a traditional left-to-right language model?",
+      "answer_text": "According to [1], the main difference is that BERT's masked language model objective is pre-trained using a bidirectional model, whereas traditional language models are pre-trained left-to-right or right-to-left. This allows BERT to capture more contextual information, as it can \"see\" the entire input sequence, not just the tokens to the left or right of the target word. Additionally, [1] mentions that standard conditional language models can only be trained left-to-right or right-to-left, as bidirectional conditioning would allow each word to indirectly \"see itself\". In contrast, BERT's masked language model objective masks some of the input tokens and predicts them, allowing the model to learn a bidirectional representation of the input sequence.",
+      "should_refuse": false,
+      "refused": false,
+      "citation_correct": true,
+      "page_match": false,
+      "groundedness_score": 5,
+      "retrieval_latency_ms": 118.7436250038445,
+      "generation_latency_ms": 6026.115542044863,
+      "total_latency_ms": 6144.859167048708
+    },
+    {
+      "question": "What are the limitations of Chain-of-Thought prompting?",
+      "answer_text": "The excerpts provided do not contain enough information to answer the question about the limitations of Chain-of-Thought prompting. The excerpts appear to be related to attention mechanisms in neural networks, specifically in the context of natural language processing, but do not mention Chain-of-Thought prompting or its limitations. Therefore, I cannot provide a definitive answer based on the given excerpts.",
+      "should_refuse": true,
+      "refused": true,
+      "citation_correct": true,
+      "page_match": null,
+      "groundedness_score": 5,
+      "retrieval_latency_ms": 346.3713750243187,
+      "generation_latency_ms": 5634.177124826238,
+      "total_latency_ms": 5980.548499850556
+    },
+    {
+      "question": "How does Reinforcement Learning from Human Feedback (RLHF) work?",
+      "answer_text": "The provided excerpts [1] through [5] do not contain information about Reinforcement Learning from Human Feedback (RLHF). Therefore, I cannot provide an explanation of how RLHF works based on the given excerpts.",
+      "should_refuse": true,
+      "refused": true,
+      "citation_correct": true,
+      "page_match": null,
+      "groundedness_score": 5,
+      "retrieval_latency_ms": 410.5603329371661,
+      "generation_latency_ms": 5552.795707946643,
+      "total_latency_ms": 5963.356040883809
+    }
+  ]
+}

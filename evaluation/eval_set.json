@@ -1,0 +1,128 @@
+[
+  {
+    "question": "How many identical layers are stacked in the Transformer's encoder?",
+    "expected_source": "attention_is_all_you_need.pdf",
+    "expected_page": 3,
+    "should_refuse": false,
+    "notes": "N=6 stated directly on page 3"
+  },
+  {
+    "question": "What optimizer was used to train the Transformer model?",
+    "expected_source": "attention_is_all_you_need.pdf",
+    "expected_page": 7,
+    "should_refuse": false,
+    "notes": "Adam with a warmup schedule"
+  },
+  {
+    "question": "How does the Transformer encode information about token position in a sequence?",
+    "expected_source": "attention_is_all_you_need.pdf",
+    "expected_page": 6,
+    "should_refuse": false,
+    "notes": "positional encoding section"
+  },
+  {
+    "question": "What tokenization scheme does the Transformer use for its training vocabulary?",
+    "expected_source": "attention_is_all_you_need.pdf",
+    "expected_page": 9,
+    "should_refuse": false,
+    "notes": "WordPiece, mentioned in training data section"
+  },
+  {
+    "question": "What decoding strategy is used to generate translations at inference time?",
+    "expected_source": "attention_is_all_you_need.pdf",
+    "expected_page": 8,
+    "should_refuse": false,
+    "notes": "beam search; may land on the p8/p9 boundary"
+  },
+  {
+    "question": "What is label smoothing and how was it used when training the Transformer?",
+    "expected_source": "attention_is_all_you_need.pdf",
+    "expected_page": 8,
+    "should_refuse": false,
+    "notes": null
+  },
+  {
+    "question": "What sub-layers make up each layer of the Transformer's decoder?",
+    "expected_source": "attention_is_all_you_need.pdf",
+    "expected_page": 3,
+    "should_refuse": false,
+    "notes": "self-attention + encoder-decoder attention + feed-forward"
+  },
+  {
+    "question": "How is dropout applied during training of the Transformer?",
+    "expected_source": "attention_is_all_you_need.pdf",
+    "expected_page": 8,
+    "should_refuse": false,
+    "notes": null
+  },
+  {
+    "question": "What are the two unsupervised pre-training tasks used to train BERT?",
+    "expected_source": "bert.pdf",
+    "expected_page": 4,
+    "should_refuse": false,
+    "notes": "masked language modeling + next sentence prediction"
+  },
+  {
+    "question": "During BERT pre-training, what fraction of the time is a masked position actually replaced with the [MASK] token?",
+    "expected_source": "bert.pdf",
+    "expected_page": 4,
+    "should_refuse": false,
+    "notes": "the 80/10/10 masking split"
+  },
+  {
+    "question": "What two text corpora were used to pre-train BERT?",
+    "expected_source": "bert.pdf",
+    "expected_page": 5,
+    "should_refuse": false,
+    "notes": "BooksCorpus + Wikipedia; comparison also appears near p14"
+  },
+  {
+    "question": "How many parameters does BERT-large have?",
+    "expected_source": "bert.pdf",
+    "expected_page": 3,
+    "should_refuse": false,
+    "notes": "340M; also appears in the results tables around p8"
+  },
+  {
+    "question": "What benchmark dataset is used to evaluate question-answering performance in the BERT paper?",
+    "expected_source": "bert.pdf",
+    "expected_page": 7,
+    "should_refuse": false,
+    "notes": "SQuAD leaderboard results table"
+  },
+  {
+    "question": "What is the main architectural difference between BERT's and OpenAI GPT's self-attention?",
+    "expected_source": "bert.pdf",
+    "expected_page": 14,
+    "should_refuse": false,
+    "notes": "bidirectional vs. left-to-right, direct comparison section"
+  },
+  {
+    "question": "What GLUE benchmark score does BERT achieve?",
+    "expected_source": "bert.pdf",
+    "expected_page": 1,
+    "should_refuse": false,
+    "notes": "headline result in the abstract; may also retrieve the results tables around p5-6"
+  },
+  {
+    "question": "What is the difference between BERT's masked language model objective and a traditional left-to-right language model?",
+    "expected_source": "bert.pdf",
+    "expected_page": 1,
+    "should_refuse": false,
+    "notes": null
+  },
+  {
+    "question": "What are the limitations of Chain-of-Thought prompting?",
+    "expected_source": null,
+    "expected_page": null,
+    "should_refuse": true,
+    "notes": "not covered by either indexed paper -- correct behavior is refusal, not fabrication"
+  },
+  {
+    "question": "How does Reinforcement Learning from Human Feedback (RLHF) work?",
+    "expected_source": null,
+    "expected_page": null,
+    "should_refuse": true,
+    "notes": "not covered by either indexed paper"
+  }
+]

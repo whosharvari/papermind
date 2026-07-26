@@ -22,12 +22,12 @@ def answer_question(
     return Answer(
         question=question,
         text=text,
-        citations=_unique_citations(retrieved),
+        citations=build_citations(retrieved),
         retrieved_chunks=retrieved,
     )
 
 
-def _unique_citations(retrieved: list[RetrievedChunk]) -> list[Citation]:
+def build_citations(retrieved: list[RetrievedChunk]) -> list[Citation]:
     seen: set[tuple[str, int]] = set()
     citations = []
     for item in retrieved:
