@@ -4,6 +4,7 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from transformers import AutoTokenizer
 
 from papermind.chunking.schemas import Chunk
+from papermind.chunking.sections import detect_section_boundaries
 from papermind.core.logging import get_logger
 from papermind.ingestion.schemas import PageContent
 
@@ -53,29 +54,44 @@ class DocumentChunker:
         """Chunk a document's pages, mapping each chunk back to its start page.
 
         Pages are concatenated (in order) into one text blob before splitting,
-        so chunk boundaries don't land mid-sentence at every page break. Each
-        chunk is then attributed to the page containing its first character.
+        so chunk boundaries don't land mid-sentence at every page break. The
+        text is then split into sections at detected header boundaries (see
+        `chunking.sections`), and the token splitter runs independently
+        within each section -- so a token-budget cut can no longer land
+        between, say, "5.2 Hardware and Schedule" and "5.3 Optimizer" (the
+        Session 5 failure this exists to fix). A document with no detected
+        boundaries is just one section, i.e. identical to the old behavior.
         """
         if not pages:
             return []
 
         full_text, page_offsets = self._concatenate_pages(pages)
-        located_chunks = self._locate_chunks(full_text)
+        section_bounds = sorted({0, *detect_section_boundaries(full_text), len(full_text)})
 
         chunks: list[Chunk] = []
-        for index, (chunk_text, start_index) in enumerate(located_chunks):
-            page_number = self._page_for_offset(page_offsets, start_index)
-            chunks.append(
-                Chunk(
-                    id=f"{source_file}::{index:04d}",
-                    text=chunk_text,
-                    source_file=source_file,
-                    page_number=page_number,
-                    chunk_index=index,
+        for start, end in zip(section_bounds, section_bounds[1:], strict=False):
+            section_text = full_text[start:end]
+            if not section_text.strip():
+                continue
+            for chunk_text, local_offset in self._locate_chunks(section_text):
+                page_number = self._page_for_offset(page_offsets, start + local_offset)
+                index = len(chunks)
+                chunks.append(
+                    Chunk(
+                        id=f"{source_file}::{index:04d}",
+                        text=chunk_text,
+                        source_file=source_file,
+                        page_number=page_number,
+                        chunk_index=index,
+                    )
                 )
-            )
 
-        logger.info("Chunked %s into %d chunks", source_file, len(chunks))
+        logger.info(
+            "Chunked %s into %d chunks (%d sections)",
+            source_file,
+            len(chunks),
+            len(section_bounds) - 1,
+        )
         return chunks
 
     def _locate_chunks(self, text: str) -> list[tuple[str, int]]:

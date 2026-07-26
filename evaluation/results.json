@@ -15,9 +15,9 @@
         "question": "What optimizer was used to train the Transformer model?",
         "k": 3,
         "document_hit": true,
-        "document_rank": 1,
+        "document_rank": 3,
         "page_hit": true,
-        "page_rank": 1,
+        "page_rank": 3,
         "chunk_hit": false,
         "chunk_rank": null
       },
@@ -45,7 +45,7 @@
         "question": "What decoding strategy is used to generate translations at inference time?",
         "k": 3,
         "document_hit": true,
-        "document_rank": 1,
+        "document_rank": 3,
         "page_hit": false,
         "page_rank": null,
         "chunk_hit": null,
@@ -117,7 +117,7 @@
         "document_hit": true,
         "document_rank": 1,
         "page_hit": true,
-        "page_rank": 2,
+        "page_rank": 3,
         "chunk_hit": null,
         "chunk_rank": null
       },
@@ -127,7 +127,7 @@
         "document_hit": true,
         "document_rank": 1,
         "page_hit": true,
-        "page_rank": 1,
+        "page_rank": 3,
         "chunk_hit": null,
         "chunk_rank": null
       },
@@ -145,7 +145,7 @@
         "question": "What GLUE benchmark score does BERT achieve?",
         "k": 3,
         "document_hit": true,
-        "document_rank": 1,
+        "document_rank": 2,
         "page_hit": false,
         "page_rank": null,
         "chunk_hit": null,
@@ -156,8 +156,8 @@
         "k": 3,
         "document_hit": true,
         "document_rank": 1,
-        "page_hit": false,
-        "page_rank": null,
+        "page_hit": true,
+        "page_rank": 2,
         "chunk_hit": null,
         "chunk_rank": null
       },
@@ -178,8 +178,8 @@
         "document_rank": 1,
         "page_hit": true,
         "page_rank": 1,
-        "chunk_hit": true,
-        "chunk_rank": 1
+        "chunk_hit": false,
+        "chunk_rank": null
       },
       {
         "question": "What is few-shot learning as described in the GPT-3 paper?",
@@ -195,11 +195,11 @@
         "question": "What is the maximum context window size, in tokens, that GPT-3 processes?",
         "k": 3,
         "document_hit": true,
-        "document_rank": 2,
+        "document_rank": 1,
         "page_hit": true,
-        "page_rank": 2,
-        "chunk_hit": true,
-        "chunk_rank": 3
+        "page_rank": 1,
+        "chunk_hit": false,
+        "chunk_rank": null
       },
       {
         "question": "How does GPT-3's approach to few-shot learning differ from traditional fine-tuning?",
@@ -336,8 +336,8 @@
         "k": 3,
         "document_hit": true,
         "document_rank": 1,
-        "page_hit": false,
-        "page_rank": null,
+        "page_hit": true,
+        "page_rank": 3,
         "chunk_hit": null,
         "chunk_rank": null
       },
@@ -387,7 +387,7 @@
         "document_hit": true,
         "document_rank": 1,
         "page_hit": true,
-        "page_rank": 2,
+        "page_rank": 3,
         "chunk_hit": null,
         "chunk_rank": null
       },
@@ -405,7 +405,7 @@
         "question": "What three training stages make up the InstructGPT pipeline?",
         "k": 3,
         "document_hit": true,
-        "document_rank": 1,
+        "document_rank": 3,
         "page_hit": false,
         "page_rank": null,
         "chunk_hit": null,
@@ -416,8 +416,8 @@
         "k": 3,
         "document_hit": true,
         "document_rank": 1,
-        "page_hit": false,
-        "page_rank": null,
+        "page_hit": true,
+        "page_rank": 3,
         "chunk_hit": false,
         "chunk_rank": null
       },
@@ -437,7 +437,7 @@
         "document_hit": true,
         "document_rank": 1,
         "page_hit": true,
-        "page_rank": 1,
+        "page_rank": 3,
         "chunk_hit": null,
         "chunk_rank": null
       },
@@ -465,9 +465,9 @@
         "question": "What is a shortcut (skip) connection in a residual block?",
         "k": 3,
         "document_hit": true,
-        "document_rank": 2,
+        "document_rank": 1,
         "page_hit": true,
-        "page_rank": 2,
+        "page_rank": 1,
         "chunk_hit": null,
         "chunk_rank": null
       },
@@ -507,9 +507,9 @@
         "question": "What optimizer was used to train the Transformer model?",
         "k": 5,
         "document_hit": true,
-        "document_rank": 1,
+        "document_rank": 3,
         "page_hit": true,
-        "page_rank": 1,
+        "page_rank": 3,
         "chunk_hit": false,
         "chunk_rank": null
       },
@@ -537,7 +537,7 @@
         "question": "What decoding strategy is used to generate translations at inference time?",
         "k": 5,
         "document_hit": true,
-        "document_rank": 1,
+        "document_rank": 3,
         "page_hit": false,
         "page_rank": null,
         "chunk_hit": null,
@@ -609,7 +609,7 @@
         "document_hit": true,
         "document_rank": 1,
         "page_hit": true,
-        "page_rank": 2,
+        "page_rank": 3,
         "chunk_hit": null,
         "chunk_rank": null
       },
@@ -619,7 +619,7 @@
         "document_hit": true,
         "document_rank": 1,
         "page_hit": true,
-        "page_rank": 1,
+        "page_rank": 3,
         "chunk_hit": null,
         "chunk_rank": null
       },
@@ -637,7 +637,7 @@
         "question": "What GLUE benchmark score does BERT achieve?",
         "k": 5,
         "document_hit": true,
-        "document_rank": 1,
+        "document_rank": 2,
         "page_hit": false,
         "page_rank": null,
         "chunk_hit": null,
@@ -648,8 +648,8 @@
         "k": 5,
         "document_hit": true,
         "document_rank": 1,
-        "page_hit": false,
-        "page_rank": null,
+        "page_hit": true,
+        "page_rank": 2,
         "chunk_hit": null,
         "chunk_rank": null
       },
@@ -670,8 +670,8 @@
         "document_rank": 1,
         "page_hit": true,
         "page_rank": 1,
-        "chunk_hit": true,
-        "chunk_rank": 1
+        "chunk_hit": false,
+        "chunk_rank": null
       },
       {
         "question": "What is few-shot learning as described in the GPT-3 paper?",
@@ -687,11 +687,11 @@
         "question": "What is the maximum context window size, in tokens, that GPT-3 processes?",
         "k": 5,
         "document_hit": true,
-        "document_rank": 2,
+        "document_rank": 1,
         "page_hit": true,
-        "page_rank": 2,
-        "chunk_hit": true,
-        "chunk_rank": 3
+        "page_rank": 1,
+        "chunk_hit": false,
+        "chunk_rank": null
       },
       {
         "question": "How does GPT-3's approach to few-shot learning differ from traditional fine-tuning?",
@@ -808,8 +808,8 @@
         "k": 5,
         "document_hit": true,
         "document_rank": 1,
-        "page_hit": true,
-        "page_rank": 5,
+        "page_hit": false,
+        "page_rank": null,
         "chunk_hit": false,
         "chunk_rank": null
       },
@@ -828,8 +828,8 @@
         "k": 5,
         "document_hit": true,
         "document_rank": 1,
-        "page_hit": false,
-        "page_rank": null,
+        "page_hit": true,
+        "page_rank": 3,
         "chunk_hit": null,
         "chunk_rank": null
       },
@@ -838,8 +838,8 @@
         "k": 5,
         "document_hit": true,
         "document_rank": 1,
-        "page_hit": true,
-        "page_rank": 5,
+        "page_hit": false,
+        "page_rank": null,
         "chunk_hit": null,
         "chunk_rank": null
       },
@@ -879,7 +879,7 @@
         "document_hit": true,
         "document_rank": 1,
         "page_hit": true,
-        "page_rank": 2,
+        "page_rank": 3,
         "chunk_hit": null,
         "chunk_rank": null
       },
@@ -897,7 +897,7 @@
         "question": "What three training stages make up the InstructGPT pipeline?",
         "k": 5,
         "document_hit": true,
-        "document_rank": 1,
+        "document_rank": 3,
         "page_hit": true,
         "page_rank": 4,
         "chunk_hit": null,
@@ -909,7 +909,7 @@
         "document_hit": true,
         "document_rank": 1,
         "page_hit": true,
-        "page_rank": 4,
+        "page_rank": 3,
         "chunk_hit": false,
         "chunk_rank": null
       },
@@ -918,8 +918,8 @@
         "k": 5,
         "document_hit": true,
         "document_rank": 1,
-        "page_hit": false,
-        "page_rank": null,
+        "page_hit": true,
+        "page_rank": 4,
         "chunk_hit": null,
         "chunk_rank": null
       },
@@ -929,7 +929,7 @@
         "document_hit": true,
         "document_rank": 1,
         "page_hit": true,
-        "page_rank": 1,
+        "page_rank": 3,
         "chunk_hit": null,
         "chunk_rank": null
       },
@@ -957,9 +957,9 @@
         "question": "What is a shortcut (skip) connection in a residual block?",
         "k": 5,
         "document_hit": true,
-        "document_rank": 2,
+        "document_rank": 1,
         "page_hit": true,
-        "page_rank": 2,
+        "page_rank": 1,
         "chunk_hit": null,
         "chunk_rank": null
       },
@@ -999,9 +999,9 @@
         "question": "What optimizer was used to train the Transformer model?",
         "k": 8,
         "document_hit": true,
-        "document_rank": 1,
+        "document_rank": 3,
         "page_hit": true,
-        "page_rank": 1,
+        "page_rank": 3,
         "chunk_hit": false,
         "chunk_rank": null
       },
@@ -1029,7 +1029,7 @@
         "question": "What decoding strategy is used to generate translations at inference time?",
         "k": 8,
         "document_hit": true,
-        "document_rank": 1,
+        "document_rank": 3,
         "page_hit": false,
         "page_rank": null,
         "chunk_hit": null,
@@ -1101,7 +1101,7 @@
         "document_hit": true,
         "document_rank": 1,
         "page_hit": true,
-        "page_rank": 2,
+        "page_rank": 3,
         "chunk_hit": null,
         "chunk_rank": null
       },
@@ -1111,7 +1111,7 @@
         "document_hit": true,
         "document_rank": 1,
         "page_hit": true,
-        "page_rank": 1,
+        "page_rank": 3,
         "chunk_hit": null,
         "chunk_rank": null
       },
@@ -1129,9 +1129,9 @@
         "question": "What GLUE benchmark score does BERT achieve?",
         "k": 8,
         "document_hit": true,
-        "document_rank": 1,
-        "page_hit": false,
-        "page_rank": null,
+        "document_rank": 2,
+        "page_hit": true,
+        "page_rank": 6,
         "chunk_hit": null,
         "chunk_rank": null
       },
@@ -1141,7 +1141,7 @@
         "document_hit": true,
         "document_rank": 1,
         "page_hit": true,
-        "page_rank": 8,
+        "page_rank": 2,
         "chunk_hit": null,
         "chunk_rank": null
       },
@@ -1162,8 +1162,8 @@
         "document_rank": 1,
         "page_hit": true,
         "page_rank": 1,
-        "chunk_hit": true,
-        "chunk_rank": 1
+        "chunk_hit": false,
+        "chunk_rank": null
       },
       {
         "question": "What is few-shot learning as described in the GPT-3 paper?",
@@ -1179,11 +1179,11 @@
         "question": "What is the maximum context window size, in tokens, that GPT-3 processes?",
         "k": 8,
         "document_hit": true,
-        "document_rank": 2,
+        "document_rank": 1,
         "page_hit": true,
-        "page_rank": 2,
-        "chunk_hit": true,
-        "chunk_rank": 3
+        "page_rank": 1,
+        "chunk_hit": false,
+        "chunk_rank": null
       },
       {
         "question": "How does GPT-3's approach to few-shot learning differ from traditional fine-tuning?",
@@ -1271,9 +1271,9 @@
         "document_hit": true,
         "document_rank": 1,
         "page_hit": true,
-        "page_rank": 7,
-        "chunk_hit": true,
-        "chunk_rank": 8
+        "page_rank": 8,
+        "chunk_hit": false,
+        "chunk_rank": null
       },
       {
         "question": "Does LoRA introduce additional inference latency compared to a fully fine-tuned model?",
@@ -1281,7 +1281,7 @@
         "document_hit": true,
         "document_rank": 1,
         "page_hit": true,
-        "page_rank": 7,
+        "page_rank": 6,
         "chunk_hit": null,
         "chunk_rank": null
       },
@@ -1301,9 +1301,9 @@
         "document_hit": true,
         "document_rank": 1,
         "page_hit": true,
-        "page_rank": 5,
-        "chunk_hit": false,
-        "chunk_rank": null
+        "page_rank": 8,
+        "chunk_hit": true,
+        "chunk_rank": 8
       },
       {
         "question": "What is the difference between the RAG-Sequence and RAG-Token model variants?",
@@ -1320,8 +1320,8 @@
         "k": 8,
         "document_hit": true,
         "document_rank": 1,
-        "page_hit": false,
-        "page_rank": null,
+        "page_hit": true,
+        "page_rank": 3,
         "chunk_hit": null,
         "chunk_rank": null
       },
@@ -1331,7 +1331,7 @@
         "document_hit": true,
         "document_rank": 1,
         "page_hit": true,
-        "page_rank": 5,
+        "page_rank": 6,
         "chunk_hit": null,
         "chunk_rank": null
       },
@@ -1360,8 +1360,8 @@
         "k": 8,
         "document_hit": true,
         "document_rank": 1,
-        "page_hit": true,
-        "page_rank": 7,
+        "page_hit": false,
+        "page_rank": null,
         "chunk_hit": null,
         "chunk_rank": null
       },
@@ -1371,7 +1371,7 @@
         "document_hit": true,
         "document_rank": 1,
         "page_hit": true,
-        "page_rank": 2,
+        "page_rank": 3,
         "chunk_hit": null,
         "chunk_rank": null
       },
@@ -1389,7 +1389,7 @@
         "question": "What three training stages make up the InstructGPT pipeline?",
         "k": 8,
         "document_hit": true,
-        "document_rank": 1,
+        "document_rank": 3,
         "page_hit": true,
         "page_rank": 4,
         "chunk_hit": null,
@@ -1401,7 +1401,7 @@
         "document_hit": true,
         "document_rank": 1,
         "page_hit": true,
-        "page_rank": 4,
+        "page_rank": 3,
         "chunk_hit": false,
         "chunk_rank": null
       },
@@ -1411,7 +1411,7 @@
         "document_hit": true,
         "document_rank": 1,
         "page_hit": true,
-        "page_rank": 6,
+        "page_rank": 4,
         "chunk_hit": null,
         "chunk_rank": null
       },
@@ -1421,7 +1421,7 @@
         "document_hit": true,
         "document_rank": 1,
         "page_hit": true,
-        "page_rank": 1,
+        "page_rank": 3,
         "chunk_hit": null,
         "chunk_rank": null
       },
@@ -1449,9 +1449,9 @@
         "question": "What is a shortcut (skip) connection in a residual block?",
         "k": 8,
         "document_hit": true,
-        "document_rank": 2,
+        "document_rank": 1,
         "page_hit": true,
-        "page_rank": 2,
+        "page_rank": 1,
         "chunk_hit": null,
         "chunk_rank": null
       },
@@ -1480,66 +1480,22 @@
   "generation": [
     {
       "question": "How many identical layers are stacked in the Transformer's encoder?",
-      "answer_text": "According to [1], the Transformer's encoder is composed of a stack of N = 6 identical layers.",
+      "answer_text": "According to excerpt [2], the Transformer's encoder is composed of a stack of N = 6 identical layers.",
       "should_refuse": false,
       "refused": false,
       "citation_correct": true,
       "page_match": true,
       "groundedness_score": 5,
-      "retrieval_latency_ms": 8.270540973171592,
-      "generation_latency_ms": 554.4596251565963,
-      "total_latency_ms": 562.7301661297679
-    },
-    {
-      "question": "What optimizer was used to train the Transformer model?",
-      "answer_text": "The excerpts provided do not contain enough information to answer the question about the optimizer used to train the Transformer model. None of the excerpts [1] through [5] mention the optimizer used.",
-      "should_refuse": false,
-      "refused": true,
-      "citation_correct": true,
-      "page_match": true,
-      "groundedness_score": 5,
-      "retrieval_latency_ms": 28.281999984756112,
-      "generation_latency_ms": 418.4049169998616,
-      "total_latency_ms": 446.6869169846177
-    },
-    {
-      "question": "How does the Transformer encode information about token position in a sequence?",
-      "answer_text": "The Transformer encodes information about token position in a sequence by adding \"positional encodings\" to the input embeddings [1]. These positional encodings have the same dimension as the embeddings, allowing them to be summed. The specific method used in the provided excerpt is to use sine and cosine functions of different frequencies to generate the positional encodings [1]. Additionally, other methods of encoding positional information are mentioned, such as learning and adding positional embeddings to the inputs at the beginning of each layer [2, 4], but the exact method used may vary depending on the specific implementation.",
-      "should_refuse": false,
-      "refused": false,
-      "citation_correct": true,
-      "page_match": true,
-      "groundedness_score": 5,
-      "retrieval_latency_ms": 17.709957901388407,
-      "generation_latency_ms": 629.0440419688821,
-      "total_latency_ms": 646.7539998702705
-    },
-    {
-      "question": "What tokenization scheme does the Transformer use for its training vocabulary?",
-      "answer_text": "The excerpts provided do not contain enough information to answer the question about the specific tokenization scheme used by the Transformer for its training vocabulary. The excerpts mention tokenization in the context of the training dataset [3], but they do not provide details about the tokenization scheme itself.",
-      "should_refuse": false,
-      "refused": true,
-      "citation_correct": false,
-      "page_match": false,
-      "groundedness_score": 5,
-      "retrieval_latency_ms": 18.276874907314777,
-      "generation_latency_ms": 413.7015410233289,
-      "total_latency_ms": 431.9784159306437
-    },
-    {
-      "question": "What decoding strategy is used to generate translations at inference time?",
-      "answer_text": "The provided excerpts do not contain enough information to determine the decoding strategy used to generate translations at inference time. The excerpts mention \"Thorough Decoding\" and \"Fast Decoding\" in [3], but these are related to a specific task and do not provide a general answer to the question. Additionally, [2] mentions various papers related to machine translation, but does not specify a decoding strategy. Therefore, I cannot provide a definitive answer based on the given excerpts.",
-      "should_refuse": false,
-      "refused": true,
-      "citation_correct": true,
-      "page_match": false,
-      "groundedness_score": 5,
-      "retrieval_latency_ms": 20.255292067304254,
-      "generation_latency_ms": 500.3922919277102,
-      "total_latency_ms": 520.6475839950144
+      "retrieval_latency_ms": 17.02245813794434,
+      "generation_latency_ms": 398.262667004019,
+      "total_latency_ms": 415.28512514196336
     }
   ],
   "failed_questions": [
+    "What optimizer was used to train the Transformer model?",
+    "How does the Transformer encode information about token position in a sequence?",
+    "What tokenization scheme does the Transformer use for its training vocabulary?",
+    "What decoding strategy is used to generate translations at inference time?",
     "What is label smoothing and how was it used when training the Transformer?",
     "What sub-layers make up each layer of the Transformer's decoder?",
     "How is dropout applied during training of the Transformer?",

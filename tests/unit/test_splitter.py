@@ -59,3 +59,24 @@ def test_consecutive_chunks_overlap(chunker: DocumentChunker) -> None:
     first_words = chunks[0].text.split()
     second_words = chunks[1].text.split()
     assert any(word in second_words[:8] for word in first_words[-8:])
+
+
+def test_section_boundary_prevents_cross_topic_chunk(chunker: DocumentChunker) -> None:
+    # Reproduces the Session 5 failure: a token-budget cut landing between two
+    # subsections diluted the chunk that should have been purely about the
+    # optimizer. Both halves individually fit well under chunk_size_tokens=20,
+    # so without section awareness the splitter would merge them into one chunk.
+    text = (
+        "We trained our models on one machine with 8 GPUs for a full day. "
+        "5.3 Optimizer We used the Adam optimizer with beta values."
+    )
+    pages = [PageContent(source_file="doc.pdf", page_number=1, text=text)]
+
+    chunks = chunker.chunk_document("doc.pdf", pages)
+
+    hardware_chunks = [c for c in chunks if "GPUs" in c.text]
+    optimizer_chunks = [c for c in chunks if "Adam optimizer" in c.text]
+    assert hardware_chunks and optimizer_chunks
+    assert hardware_chunks[0].id != optimizer_chunks[0].id
+    assert "Adam optimizer" not in hardware_chunks[0].text
+    assert "GPUs" not in optimizer_chunks[0].text

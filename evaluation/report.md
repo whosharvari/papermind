@@ -1,7 +1,11 @@
 # Papermind Evaluation Report
 
-**49 question(s) failed with a Groq API error and were excluded from every metric below** (not counted as failures, not counted as successes -- simply absent):
+**53 question(s) failed with a Groq API error and were excluded from every metric below** (not counted as failures, not counted as successes -- simply absent):
 
+- What optimizer was used to train the Transformer model?
+- How does the Transformer encode information about token position in a sequence?
+- What tokenization scheme does the Transformer use for its training vocabulary?
+- What decoding strategy is used to generate translations at inference time?
 - What is label smoothing and how was it used when training the Transformer?
 - What sub-layers make up each layer of the Transformer's decoder?
 - How is dropout applied during training of the Transformer?
@@ -58,103 +62,124 @@ n = 49 document-level, 49 page-level, 9 chunk-level (chunk-level ground truth on
 
 | k | Doc Hit Rate | Doc MRR | Page Hit Rate | Page MRR | Chunk Hit Rate | Chunk MRR |
 |---|---|---|---|---|---|---|
-| 3 | 0.98 | 0.949 | 0.47 | 0.408 | 0.22 | 0.148 |
-| 5 | 0.98 | 0.949 | 0.61 | 0.440 | 0.22 | 0.148 |
-| 8 | 0.98 | 0.949 | 0.76 | 0.461 | 0.33 | 0.162 |
+| 3 | 0.98 | 0.918 | 0.53 | 0.405 | 0.00 | 0.000 |
+| 5 | 0.98 | 0.918 | 0.63 | 0.428 | 0.00 | 0.000 |
+| 8 | 0.98 | 0.918 | 0.78 | 0.450 | 0.11 | 0.014 |
 
 ## Answer quality & citation correctness (k=5)
 
-- Citation accuracy (source document): 0.80 (4/5)
-- Page-level accuracy (±1 page tolerance): 0.60 (3/5)
+- Citation accuracy (source document): 1.00 (1/1)
+- Page-level accuracy (±1 page tolerance): 1.00 (1/1)
 - Mean groundedness score (1-5, LLM-judged): 5.00
-- False refusals on answerable questions: 3/5
+- False refusals on answerable questions: 0/1
 - Correct refusals on out-of-corpus questions: 0/0
 
 ## Latency (ms, k=5)
 
 | stage | mean | median | p95 |
 |---|---|---|---|
-| retrieval | 19 | 18 | 20 |
-| generation | 503 | 500 | 554 |
-| total | 522 | 521 | 563 |
+| retrieval | 17 | 17 | 17 |
+| generation | 398 | 398 | 398 |
+| total | 415 | 415 | 415 |
 
 ## Per-question results
 
 | question | citation ok | refused | groundedness | total ms |
 |---|---|---|---|---|
-| How many identical layers are stacked in the Transformer's encoder? | ✓ | no | 5 | 563 |
-| What optimizer was used to train the Transformer model? | ✓ | yes | 5 | 447 |
-| How does the Transformer encode information about token position in a sequence? | ✓ | no | 5 | 647 |
-| What tokenization scheme does the Transformer use for its training vocabulary? | ✗ | yes | 5 | 432 |
-| What decoding strategy is used to generate translations at inference time? | ✓ | yes | 5 | 521 |
+| How many identical layers are stacked in the Transformer's encoder? | ✓ | no | 5 | 415 |
 
-## Why generation-quality numbers above are partial (5/54, not 54/54)
+## Generation-side data is not usable this session (1/54)
 
-Groq's free-tier daily token quota (100,000 tokens/day, shared across this whole project) was
-already mostly spent by Session 5's run plus this session's first attempt, and was fully
-exhausted 5 questions into this session's re-run -- confirmed via the API's own error message
-(`Used 100000, Requested ...`, retry-after climbing back up as old requests slowly age out of
-the quota window, not a fixed midnight reset). This is a hard external constraint, not a bug:
-`run_generation_eval` now isolates failures per-question (see `scripts/evaluate.py` diff --
-mirrors the per-file isolation `scripts/ingest.py` already had), so the 5 questions that *did*
-complete produced a real, valid partial result instead of the whole run being lost, and the 49
-that failed are listed explicitly above rather than silently absent.
+Groq's daily quota (see Session 6) had partially recovered -- a probe call succeeded -- but was
+exhausted again after a single question. This is expected: the quota is shared across the whole
+project and Session 6 already spent most of a day's budget just before this run. **Every
+conclusion below comes from the retrieval sweep only**, which is unaffected (FAISS is local, no
+Groq calls) and is this session's actual object of study per the brief.
 
-**Retrieval-quality numbers are unaffected by this and are complete (49/49)** -- the retrieval
-sweep only calls FAISS locally, never Groq. That's also this session's actual primary goal, so
-the quota exhaustion blocks the secondary analysis, not the main one.
+## Before / after: Session 6 (token-only) vs. Session 7 (section-aware)
 
-The 3/5 false-refusal rate in this partial sample is too small to trust as a system-wide number
--- it could be real, or it could be within the same refusal-detection-heuristic noise documented
-as a limitation in Session 5. **Recommendation: re-run `scripts/evaluate.py` once the daily quota
-resets to get a trustworthy generation-quality number on the full 54-question set**; the report
-below only draws conclusions from the complete retrieval data, not from this 5-question sample.
+Same 13-paper corpus, same embedding model, same chunk_size/overlap, same retriever, same 49
+answerable questions (the 9 chunk-level `expected_chunk_id` values were re-verified and updated
+against the new chunk boundaries before this run -- chunk IDs are not stable across a re-chunk,
+and re-using stale IDs would have silently scored the wrong text).
 
-## Analysis: is retrieval evaluation now statistically meaningful?
+| k | Doc HR | Doc MRR | Page HR | Page MRR | Chunk HR | Chunk MRR |
+|---|---|---|---|---|---|---|
+| **Session 6** k=3 | 0.98 | 0.949 | 0.47 | 0.408 | 0.22 | 0.148 |
+| **Session 7** k=3 | 0.98 | 0.918 | 0.53 | 0.405 | 0.00 | 0.000 |
+| **Session 6** k=5 | 0.98 | 0.949 | 0.61 | 0.440 | 0.22 | 0.148 |
+| **Session 7** k=5 | 0.98 | 0.918 | 0.63 | 0.428 | 0.00 | 0.000 |
+| **Session 6** k=8 | 0.98 | 0.949 | 0.76 | 0.461 | 0.33 | 0.162 |
+| **Session 7** k=8 | 0.98 | 0.918 | 0.78 | 0.450 | 0.11 | 0.014 |
 
-Yes, and the difference from Session 5 is stark. With 2 documents, Hit Rate was flat at 1.00
-across every k and every level. With 13 documents (49 answerable questions), the three
-granularity levels now tell three genuinely different stories:
+**Chunk count:** 2,278 -> 2,349 (+3%), from forced splits at section boundaries, as predicted
+before implementation.
 
-- **Document-level (0.98 flat across k=3/5/8):** still near-ceiling, but no longer *trivially*
-  so -- there's now one real miss out of 49, not a mathematical certainty of zero misses. Flat
-  MRR (0.949) across k confirms the miss isn't a ranking problem within reach of larger k; the
-  right document simply isn't surfacing for that one question, however large k gets within the
-  range tested.
-- **Page-level (0.47 -> 0.61 -> 0.76 across k=3/5/8): this is the informative curve this session
-  was built to produce.** A 29-point Hit Rate improvement from k=3 to k=8 is real, substantial,
-  and monotonic -- exactly the signal Session 5 could not generate with only 2 documents. It says
-  plainly that k=5 (today's default) is leaving real page-level recall on the table.
-- **Chunk-level (0.22 -> 0.22 -> 0.33, n=9):** the smallest, noisiest sample (only 9 questions
-  have single-chunk ground truth, by the design decided at the top of this session), but the
-  absolute numbers are low even at k=8. Combined with page-level hit rate being decent at k=8
-  (0.76) while chunk-level lags well behind (0.33), the gap between "found the right page" and
-  "found the exact right chunk" is itself evidence: pages are being found, but the *specific*
-  chunk within that page is still frequently missed -- consistent with Session 5's chunk-dilution
-  finding (the Adam-optimizer chunk spanning two subsections), now observed again on a much larger
-  and more diverse corpus rather than a single anecdote.
+## Analysis: mixed result, not a clean win -- and the chunk-level number needed real investigation
 
-## Recommendations (evidence-driven, ranked)
+**Document-level: flat, as predicted.** 0.98 both sessions. This change targets fine-grained
+precision, not coarse document discrimination, so no reason to expect movement here, and none
+occurred.
 
-1. **Raise default top-k from 5 to 8 for retrieval.** Directly supported: page-level Hit Rate
-   improves 15 points (0.61 -> 0.76) and chunk-level Hit Rate improves 11 points (0.22 -> 0.33)
-   moving from k=5 to k=8, with no retrieval-side cost (FAISS search over 2,278 vectors is still
-   single-digit milliseconds regardless of k -- see latency table). The only real cost is a longer,
-   slightly more diluted prompt, which is a generation-quality question the partial data above
-   can't yet answer with confidence. This is now a data-backed change, unlike a k adjustment
-   proposed from Session 5's saturated numbers would have been.
-2. **Still recommend chunking on section boundaries, not resizing chunk_size/overlap** -- Session
-   5's proposal, now with independent corroborating evidence (chunk-level hit rate lagging
-   page-level hit rate by over 40 points at k=8) rather than a single anecdote. This remains
-   unimplemented; it's a recommendation, not a change made today, per this session's scope.
-3. **No evidence today supports changing the embedding model.** Nothing in this session compared
-   `all-MiniLM-L6-v2` against an alternative -- recommending a swap would be exactly the kind of
-   speculative change this session was scoped to avoid. If chunking-boundary fixes in a future
-   session don't close the chunk-level gap, an embedding-model comparison (using this same
-   chunk-level metric as the scoring function) would be the next evidence-generating experiment,
-   not a starting assumption.
-4. **Re-run generation-quality evaluation once the Groq daily quota resets**, before acting on the
-   3/5 false-refusal signal from this session's partial sample. If the full-sample number confirms
-   a materially elevated false-refusal rate on the larger corpus (plausible: more documents means
-   more topically-adjacent-but-wrong chunks competing for top-k, which could make the model more
-   conservative), that becomes a legitimate, separate priority for a future session's prompt work.
+**Page-level: modest, genuine improvement.** Hit Rate up at every k (0.47->0.53, 0.61->0.63,
+0.76->0.78); MRR essentially flat to marginally down (within noise at n=49). This is the most
+reliable signal in this comparison -- page-level ground truth doesn't depend on picking one
+"best" chunk, just landing within a page that contains multiple chunks, so it's robust to exactly
+the kind of chunk-boundary churn a re-chunk introduces.
+
+**Chunk-level: looks like a severe regression (0.22 -> 0.00 at k=3/5), but the real story is more
+specific than "section-aware chunking made retrieval worse."** I checked this rather than
+reporting the raw number, per this session's "do not assume success" instruction -- and found two
+distinct causes, not one:
+
+1. **A genuine, predicted trade-off materializing.** The Adam-optimizer chunk (this whole
+   session's motivating example) is now purely about the optimizer -- exactly as designed -- but
+   at 461 characters it's now short enough that its embedding may lack the surrounding
+   conversational framing ("we trained our models... For our big models...") that happened to
+   overlap well with how the eval question was phrased. Direct check: its cosine similarity to
+   "What optimizer was used to train the Transformer model?" is 0.365, ranking 97th of 2,349 --
+   nowhere near top-8. The chunk is topically *purer* and unambiguously *correct* if retrieved,
+   but is currently ranking lower for this specific query phrasing than the diluted version did.
+   This is the trade-off named explicitly before implementation ("a short section... could hurt
+   retrieval in the other direction") -- now confirmed, not hypothetical.
+2. **A pre-existing ground-truth annotation weakness, exposed rather than caused by this
+   session's change.** `vit_image_16x16_words.pdf::0000` -- Session 6's annotated target for "What
+   patch size does the Vision Transformer use?" -- turns out to be the paper's **title and author
+   block** ("AN IMAGE IS WORTH 16X16 WORDS: TRANSFORMERS FOR..."), not an explanation of the
+   patch-splitting method. It only matched Session 6's keyword grep because "16x16" appears in the
+   *title*. The actual methodology lives in chunks `::0004` and `::0014` (Section 3.1). Under
+   token-only chunking this title block was likely merged with adjacent explanatory content,
+   masking the annotation's imprecision; section-aware chunking correctly isolated the front
+   matter into its own chunk, and the annotation's weakness became visible. Retrieval ranking the
+   title block low for a methodology question is arguably *correct* behavior, not a failure.
+
+Verified via direct rank lookup (not inferred from the aggregate) that neither of these is a
+pipeline bug: `attention_is_all_you_need.pdf::0033` ranks 97/2349, `vit_image_16x16_words.pdf::0000`
+ranks 20th (outside k=20) -- consistent with the reported Hit Rate, and the one chunk-level hit at
+k=8 (`rag_knowledge_intensive.pdf::0007`, rank 8) matches the reported Chunk MRR@8 (0.014 =
+(1/8)/9) exactly.
+
+**Honest conclusion: chunk-level Hit Rate at n=9 is not a trustworthy metric on its own this
+session** -- it's small enough that one annotation-quality issue swings it by 11 percentage
+points, and this session's investigation surfaced exactly that. It should not be read as "chunking
+got worse"; it should be read as "the chunk-level ground truth needs re-verification with the same
+rigor applied to the Adam-optimizer case, before trusting this specific number."
+
+## Recommendations (evidence-driven)
+
+1. **Keep section-aware chunking.** Page-level Hit Rate -- the most annotation-robust metric in
+   this comparison -- genuinely improved at every k, chunk purity is now verifiably correct
+   (Adam-optimizer chunk no longer mixes topics), and document-level is unaffected. The chunk-level
+   number is not a reason to revert; it's a reason to fix the metric's ground truth.
+2. **Re-verify all 9 `expected_chunk_id` values for semantic correctness, not just keyword
+   presence, before trusting chunk-level Hit Rate again.** The ViT case shows a keyword-grep
+   annotation can point at prose that merely *contains* the right term rather than *explains* it.
+   This is eval-set maintenance, not a chunker change.
+3. **Do not chase the Adam-optimizer chunk's specific rank further** (e.g. by re-inflating chunk
+   size, which would undo this session's fix) **without first re-running generation-quality
+   evaluation** once Groq's quota resets. A chunk ranking 97th but being topically pure might still
+   produce a *better* final answer than a diluted chunk ranking 19th, if it's retrieved at all
+   within a practical k -- that's a generation-quality question this session's data can't answer,
+   only a retrieval-quality question it can.
+4. **No evidence today supports an embedding-model change** -- same conclusion as Session 6, for
+   the same reason: nothing this session compared against an alternative model.

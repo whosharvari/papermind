@@ -11,7 +11,7 @@
     "question": "What optimizer was used to train the Transformer model?",
     "expected_source": "attention_is_all_you_need.pdf",
     "expected_page": 7,
-    "expected_chunk_id": "attention_is_all_you_need.pdf::0030",
+    "expected_chunk_id": "attention_is_all_you_need.pdf::0033",
     "should_refuse": false,
     "notes": "[hyperparameter] Adam with a warmup schedule; known Session 5 chunk-dilution failure case, kept to track whether it's fixed"
   },
@@ -139,7 +139,7 @@
     "question": "How many parameters does the largest GPT-3 model have?",
     "expected_source": "gpt3_few_shot_learners.pdf",
     "expected_page": 8,
-    "expected_chunk_id": "gpt3_few_shot_learners.pdf::0035",
+    "expected_chunk_id": "gpt3_few_shot_learners.pdf::0046",
     "should_refuse": false,
     "notes": "[hyperparameter] 175B"
   },
@@ -155,7 +155,7 @@
     "question": "What is the maximum context window size, in tokens, that GPT-3 processes?",
     "expected_source": "gpt3_few_shot_learners.pdf",
     "expected_page": 8,
-    "expected_chunk_id": "gpt3_few_shot_learners.pdf::0037",
+    "expected_chunk_id": "gpt3_few_shot_learners.pdf::0047",
     "should_refuse": false,
     "notes": "[hyperparameter] 2048 tokens"
   },
@@ -251,7 +251,7 @@
     "question": "What retriever architecture does the RAG paper use to fetch supporting documents?",
     "expected_source": "rag_knowledge_intensive.pdf",
     "expected_page": 2,
-    "expected_chunk_id": "rag_knowledge_intensive.pdf::0006",
+    "expected_chunk_id": "rag_knowledge_intensive.pdf::0007",
     "should_refuse": false,
     "notes": "[factual] Dense Passage Retriever (DPR)"
   },
@@ -331,7 +331,7 @@
     "question": "What reinforcement learning algorithm is used to fine-tune InstructGPT against the reward model?",
     "expected_source": "instructgpt_human_feedback.pdf",
     "expected_page": 2,
-    "expected_chunk_id": "instructgpt_human_feedback.pdf::0004",
+    "expected_chunk_id": "instructgpt_human_feedback.pdf::0005",
     "should_refuse": false,
     "notes": "[factual] Proximal Policy Optimization (PPO)"
   },
@@ -355,7 +355,7 @@
     "question": "How many training tokens was LLaMA trained on?",
     "expected_source": "llama_open_foundation_models.pdf",
     "expected_page": 11,
-    "expected_chunk_id": "llama_open_foundation_models.pdf::0066",
+    "expected_chunk_id": "llama_open_foundation_models.pdf::0070",
     "should_refuse": false,
     "notes": "[hyperparameter] trillions of tokens"
   },
