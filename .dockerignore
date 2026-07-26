@@ -1,0 +1,40 @@
+# Local environment (never baked into the image)
+.venv/
+.env
+
+# Version control / IDE / Claude Code
+.git/
+.claude/
+.vscode/
+.idea/
+
+# Data and derived artifacts -- mounted at runtime, not shipped in the image
+data/raw/*
+data/processed/*
+vector_store/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!vector_store/.gitkeep
+
+# Dev-only, not needed to run the service. evaluation/eval_set.json IS kept
+# (it's an input `docker exec ... python scripts/evaluate.py` needs); its
+# generated outputs are not.
+tests/
+notebooks/
+docs/
+evaluation/report.md
+evaluation/results.json
+
+# Caches and build artifacts
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+*.egg-info/
+build/
+dist/
+
+.DS_Store

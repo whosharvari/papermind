@@ -27,6 +27,13 @@ class Settings(BaseSettings):
     processed_dir: Path = PROJECT_ROOT / "data" / "processed"
     vector_store_dir: Path = PROJECT_ROOT / "vector_store"
 
+    # API server
+    api_host: str = "0.0.0.0"
+    api_port: int = 8000
+
+    # Logging
+    log_level: str = "INFO"
+
 
 @lru_cache
 def get_settings() -> Settings:
