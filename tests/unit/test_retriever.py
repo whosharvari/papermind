@@ -61,3 +61,17 @@ def test_from_disk_round_trip(tmp_path: Path, embedder: Embedder) -> None:
     results = retriever.retrieve("ancient wall in China", k=1)
 
     assert results[0].chunk.text == DOCS[2]
+
+
+def test_indexed_counts_reflect_chunks_and_distinct_papers(embedder: Embedder) -> None:
+    chunks = [
+        Chunk(id="a.pdf::0000", text=DOCS[0], source_file="a.pdf", page_number=1, chunk_index=0),
+        Chunk(id="a.pdf::0001", text=DOCS[1], source_file="a.pdf", page_number=2, chunk_index=1),
+        Chunk(id="b.pdf::0000", text=DOCS[2], source_file="b.pdf", page_number=1, chunk_index=0),
+    ]
+    store = FaissVectorStore(dim=embedder.embedding_dim)
+    store.add(embedder.embed(DOCS), chunks)
+    retriever = Retriever(store, embedder)
+
+    assert retriever.indexed_chunk_count == 3
+    assert retriever.indexed_paper_count == 2

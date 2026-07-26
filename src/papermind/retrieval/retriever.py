@@ -26,3 +26,7 @@ class Retriever:
     @property
     def indexed_chunk_count(self) -> int:
         return self._store.index.ntotal
+
+    @property
+    def indexed_paper_count(self) -> int:
+        return len({chunk.source_file for chunk in self._store.metadata})

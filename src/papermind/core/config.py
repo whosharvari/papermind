@@ -30,9 +30,15 @@ class Settings(BaseSettings):
     # API server
     api_host: str = "0.0.0.0"
     api_port: int = 8000
+    # Comma-separated allowed origins for the browser-based frontend (CORS).
+    cors_origins: str = "http://localhost:3000"
 
     # Logging
     log_level: str = "INFO"
+
+    @property
+    def cors_origins_list(self) -> list[str]:
+        return [origin.strip() for origin in self.cors_origins.split(",") if origin.strip()]
 
 
 @lru_cache

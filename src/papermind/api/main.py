@@ -2,10 +2,13 @@ from collections.abc import AsyncIterator
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI, Request
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
 from papermind import __version__
+from papermind.api.routes.papers import router as papers_router
 from papermind.api.routes.query import router as query_router
+from papermind.api.routes.stats import router as stats_router
 from papermind.core.config import get_settings
 from papermind.core.logging import configure_logging, get_logger
 from papermind.generation.llm import GroqLLM
@@ -51,7 +54,16 @@ app = FastAPI(
     lifespan=lifespan,
 )
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=get_settings().cors_origins_list,
+    allow_methods=["GET", "POST"],
+    allow_headers=["Content-Type"],
+)
+
 app.include_router(query_router)
+app.include_router(stats_router)
+app.include_router(papers_router)
 
 
 @app.exception_handler(Exception)
