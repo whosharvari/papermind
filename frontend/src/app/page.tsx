@@ -1,22 +1,18 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { useState } from "react";
 import { LandingView } from "@/features/landing/landing-view";
+
+const ChatView = dynamic(() => import("@/features/chat/chat-view").then((m) => m.ChatView), {
+  ssr: false,
+});
 
 export default function Home() {
   const [initialQuestion, setInitialQuestion] = useState<string | null>(null);
 
   if (initialQuestion) {
-    // Placeholder until the chat interface lands in the next commit.
-    return (
-      <main className="mx-auto max-w-2xl px-6 py-16">
-        <p className="text-sm text-muted-foreground">You asked:</p>
-        <p className="mt-1 text-lg font-medium">{initialQuestion}</p>
-        <p className="mt-6 text-sm text-muted-foreground">
-          The chat interface is coming up next.
-        </p>
-      </main>
-    );
+    return <ChatView initialQuestion={initialQuestion} />;
   }
 
   return <LandingView onSubmit={setInitialQuestion} />;
