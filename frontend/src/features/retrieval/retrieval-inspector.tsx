@@ -6,9 +6,10 @@ import type { RetrievedChunk } from "@/types/api";
 interface RetrievalInspectorProps {
   chunks: RetrievedChunk[] | undefined;
   isPending: boolean;
+  onOpenSource?: (chunk: RetrievedChunk) => void;
 }
 
-export function RetrievalInspector({ chunks, isPending }: RetrievalInspectorProps) {
+export function RetrievalInspector({ chunks, isPending, onOpenSource }: RetrievalInspectorProps) {
   return (
     <div className="flex h-full flex-col">
       <div className="shrink-0 border-b border-border px-4 py-3">
@@ -28,7 +29,11 @@ export function RetrievalInspector({ chunks, isPending }: RetrievalInspectorProp
         ) : chunks && chunks.length > 0 ? (
           <div className="flex flex-col gap-3">
             {chunks.map((chunk, index) => (
-              <ChunkCard key={`${chunk.source_file}-${chunk.page_number}-${index}`} chunk={chunk} />
+              <ChunkCard
+                key={`${chunk.source_file}-${chunk.page_number}-${index}`}
+                chunk={chunk}
+                onOpenSource={onOpenSource}
+              />
             ))}
           </div>
         ) : (

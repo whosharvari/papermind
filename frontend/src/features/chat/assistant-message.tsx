@@ -2,14 +2,16 @@ import { AlertCircle, RotateCcw, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { MarkdownContent } from "@/features/chat/markdown-content";
 import { SourcesList } from "@/features/chat/sources-list";
+import type { Citation } from "@/types/api";
 import type { ChatMessage } from "@/types/chat";
 
 interface AssistantMessageProps {
   message: Extract<ChatMessage, { role: "assistant" }>;
   onRetry?: () => void;
+  onOpenSource?: (citation: Citation) => void;
 }
 
-export function AssistantMessage({ message, onRetry }: AssistantMessageProps) {
+export function AssistantMessage({ message, onRetry, onOpenSource }: AssistantMessageProps) {
   return (
     <div className="flex gap-3">
       <div className="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-full border border-border bg-card">
@@ -38,7 +40,7 @@ export function AssistantMessage({ message, onRetry }: AssistantMessageProps) {
       ) : (
         <div className="max-w-[85%] rounded-2xl rounded-tl-md border border-border bg-card px-4 py-3 sm:max-w-[75%]">
           <MarkdownContent content={message.content} />
-          <SourcesList citations={message.citations} />
+          <SourcesList citations={message.citations} onSourceClick={onOpenSource} />
         </div>
       )}
     </div>

@@ -4,15 +4,17 @@ import { useEffect, useRef } from "react";
 import { AssistantMessage } from "@/features/chat/assistant-message";
 import { RagLoading } from "@/features/chat/rag-loading";
 import { UserMessage } from "@/features/chat/user-message";
+import type { Citation } from "@/types/api";
 import type { ChatMessage } from "@/types/chat";
 
 interface MessageListProps {
   messages: ChatMessage[];
   isPending: boolean;
   onRetry: () => void;
+  onOpenSource: (citation: Citation) => void;
 }
 
-export function MessageList({ messages, isPending, onRetry }: MessageListProps) {
+export function MessageList({ messages, isPending, onRetry, onOpenSource }: MessageListProps) {
   const bottomRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -29,6 +31,7 @@ export function MessageList({ messages, isPending, onRetry }: MessageListProps) 
             key={message.id}
             message={message}
             onRetry={message.status === "error" ? onRetry : undefined}
+            onOpenSource={onOpenSource}
           />
         ),
       )}

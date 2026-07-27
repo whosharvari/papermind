@@ -7,8 +7,14 @@ import { Sheet, SheetContent, SheetTitle } from "@/components/ui/sheet";
 import { useSettings } from "@/contexts/settings-context";
 import { ChatInput } from "@/features/chat/chat-input";
 import { MessageList } from "@/features/chat/message-list";
-import { RetrievalInspector } from "@/features/retrieval/retrieval-inspector";
+import { SourcePanel } from "@/features/chat/source-panel";
 import { useChat } from "@/hooks/use-chat";
+import { useMediaQuery } from "@/hooks/use-media-query";
+import type { PdfTarget } from "@/types/pdf";
+
+// Matches the `lg` breakpoint used below to keep the right panel permanently
+// visible -- below it, the same panel lives in a Sheet instead.
+const DESKTOP_QUERY = "(min-width: 1024px)";
 
 interface ChatViewProps {
   initialQuestion: string;
@@ -17,7 +23,9 @@ interface ChatViewProps {
 export function ChatView({ initialQuestion }: ChatViewProps) {
   const { settings } = useSettings();
   const { messages, isPending, sendMessage, retryLast } = useChat({ topK: settings.topK });
-  const [isInspectorOpen, setIsInspectorOpen] = useState(false);
+  const isDesktop = useMediaQuery(DESKTOP_QUERY);
+  const [isPanelOpen, setIsPanelOpen] = useState(false);
+  const [activeSource, setActiveSource] = useState<PdfTarget | null>(null);
 
   const hasSentInitial = useRef(false);
   useEffect(() => {
@@ -28,9 +36,21 @@ export function ChatView({ initialQuestion }: ChatViewProps) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  useEffect(() => {
+    // The right panel is permanently visible past this breakpoint -- don't
+    // leave the Sheet's copy mounted underneath it (double PDF fetch/render).
+    if (isDesktop) setIsPanelOpen(false);
+  }, [isDesktop]);
+
   const latestChunks = [...messages]
     .reverse()
     .find((m) => m.role === "assistant" && m.status === "done")?.retrievedChunks;
+
+  const openSource = (target: PdfTarget) => {
+    setActiveSource(target);
+    if (!isDesktop) setIsPanelOpen(true);
+  };
+  const closeSource = () => setActiveSource(null);
 
   return (
     <div className="flex h-[calc(100vh-3.5rem)]">
@@ -39,7 +59,7 @@ export function ChatView({ initialQuestion }: ChatViewProps) {
           <Button
             variant="outline"
             size="sm"
-            onClick={() => setIsInspectorOpen(true)}
+            onClick={() => setIsPanelOpen(true)}
             className="gap-1.5"
           >
             <SearchCode className="size-3.5" aria-hidden="true" />
@@ -51,7 +71,14 @@ export function ChatView({ initialQuestion }: ChatViewProps) {
         </div>
 
         <div className="min-h-0 flex-1 overflow-y-auto">
-          <MessageList messages={messages} isPending={isPending} onRetry={retryLast} />
+          <MessageList
+            messages={messages}
+            isPending={isPending}
+            onRetry={retryLast}
+            onOpenSource={(citation) =>
+              openSource({ filename: citation.source_file, page: citation.page_number })
+            }
+          />
         </div>
 
         <div className="shrink-0 border-t border-border bg-background/80 px-4 py-4 backdrop-blur-sm sm:px-6">
@@ -60,13 +87,27 @@ export function ChatView({ initialQuestion }: ChatViewProps) {
       </div>
 
       <aside className="hidden w-80 shrink-0 border-l border-border lg:block">
-        <RetrievalInspector chunks={latestChunks} isPending={isPending} />
+        <SourcePanel
+          chunks={latestChunks}
+          isPending={isPending}
+          activeSource={activeSource}
+          onOpenSource={openSource}
+          onCloseSource={closeSource}
+        />
       </aside>
 
-      <Sheet open={isInspectorOpen} onOpenChange={setIsInspectorOpen}>
+      <Sheet open={isPanelOpen} onOpenChange={setIsPanelOpen}>
         <SheetContent className="w-80 p-0 sm:max-w-80" showCloseButton>
-          <SheetTitle className="sr-only">Retrieved passages</SheetTitle>
-          <RetrievalInspector chunks={latestChunks} isPending={isPending} />
+          <SheetTitle className="sr-only">
+            {activeSource ? activeSource.filename : "Retrieved passages"}
+          </SheetTitle>
+          <SourcePanel
+            chunks={latestChunks}
+            isPending={isPending}
+            activeSource={activeSource}
+            onOpenSource={openSource}
+            onCloseSource={closeSource}
+          />
         </SheetContent>
       </Sheet>
     </div>
