@@ -25,8 +25,10 @@ export function useChat({ topK, initialMessages }: UseChatOptions) {
 
   const runQuery = useCallback(async (question: string) => {
     setIsPending(true);
+    const startedAt = performance.now();
+    const k = topKRef.current;
     try {
-      const response = await postQuery({ question, k: topKRef.current });
+      const response = await postQuery({ question, k });
       setMessages((prev) => [
         ...prev,
         {
@@ -37,6 +39,8 @@ export function useChat({ topK, initialMessages }: UseChatOptions) {
           citations: response.citations,
           retrievedChunks: response.retrieved_chunks,
           createdAt: Date.now(),
+          topK: k,
+          latencyMs: Math.round(performance.now() - startedAt),
         },
       ]);
     } catch (err) {

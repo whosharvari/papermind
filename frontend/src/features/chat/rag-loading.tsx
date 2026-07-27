@@ -1,8 +1,8 @@
 "use client";
 
-import { useReducedMotion } from "framer-motion";
 import { Check } from "lucide-react";
 import { useEffect, useState } from "react";
+import { useMotionPreference } from "@/hooks/use-motion-preference";
 
 const STEPS = [
   "Embedding your question",
@@ -16,7 +16,7 @@ const STEPS = [
 const STEP_DURATION_MS = 1400;
 
 export function RagLoading() {
-  const prefersReducedMotion = useReducedMotion();
+  const prefersReducedMotion = useMotionPreference();
   const [stepIndex, setStepIndex] = useState(0);
 
   useEffect(() => {

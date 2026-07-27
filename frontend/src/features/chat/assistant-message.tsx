@@ -1,5 +1,7 @@
 import { AlertCircle, RotateCcw, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useSettings } from "@/contexts/settings-context";
+import { DevPanel } from "@/features/chat/dev-panel";
 import { MarkdownContent } from "@/features/chat/markdown-content";
 import { SourcesList } from "@/features/chat/sources-list";
 import type { Citation } from "@/types/api";
@@ -12,6 +14,8 @@ interface AssistantMessageProps {
 }
 
 export function AssistantMessage({ message, onRetry, onOpenSource }: AssistantMessageProps) {
+  const { settings } = useSettings();
+
   return (
     <div className="flex gap-3">
       <div className="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-full border border-border bg-card">
@@ -41,6 +45,13 @@ export function AssistantMessage({ message, onRetry, onOpenSource }: AssistantMe
         <div className="max-w-[85%] rounded-2xl rounded-tl-md border border-border bg-card px-4 py-3 sm:max-w-[75%]">
           <MarkdownContent content={message.content} />
           <SourcesList citations={message.citations} onSourceClick={onOpenSource} />
+          {settings.developerMode && (
+            <DevPanel
+              topK={message.topK}
+              latencyMs={message.latencyMs}
+              chunkCount={message.retrievedChunks.length}
+            />
+          )}
         </div>
       )}
     </div>

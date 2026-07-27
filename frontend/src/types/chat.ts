@@ -15,6 +15,8 @@ export type ChatMessage =
       citations: Citation[];
       retrievedChunks: RetrievedChunk[];
       createdAt: number;
+      topK: number;
+      latencyMs: number;
     }
   | {
       id: string;
