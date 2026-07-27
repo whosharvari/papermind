@@ -1,11 +1,23 @@
-import { Button } from "@/components/ui/button";
+"use client";
+
+import { useState } from "react";
+import { LandingView } from "@/features/landing/landing-view";
 
 export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-center gap-4 bg-background text-foreground">
-      <h1 className="text-4xl font-semibold tracking-tight">PaperMind</h1>
-      <p className="text-muted-foreground">Design system scaffold — verification checkpoint.</p>
-      <Button>Accent button</Button>
-    </main>
-  );
+  const [initialQuestion, setInitialQuestion] = useState<string | null>(null);
+
+  if (initialQuestion) {
+    // Placeholder until the chat interface lands in the next commit.
+    return (
+      <main className="mx-auto max-w-2xl px-6 py-16">
+        <p className="text-sm text-muted-foreground">You asked:</p>
+        <p className="mt-1 text-lg font-medium">{initialQuestion}</p>
+        <p className="mt-6 text-sm text-muted-foreground">
+          The chat interface is coming up next.
+        </p>
+      </main>
+    );
+  }
+
+  return <LandingView onSubmit={setInitialQuestion} />;
 }
