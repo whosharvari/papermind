@@ -17,6 +17,14 @@ export function Providers({ children }: { children: React.ReactNode }) {
             retry: 1,
             staleTime: 10_000,
             refetchOnWindowFocus: false,
+            // Our own ApiError already distinguishes "backend unreachable" from
+            // other failures with a clear message -- we don't want TanStack
+            // Query's own online/offline detection silently pausing retries
+            // on top of that (observed: it can get stuck indefinitely even
+            // when navigator.onLine reports true), which would leave the
+            // health indicator stuck on "checking" forever instead of
+            // settling into a real, retryable "disconnected" state.
+            networkMode: "always",
           },
         },
       }),
