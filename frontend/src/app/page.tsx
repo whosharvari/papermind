@@ -1,7 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { useState } from "react";
+import { useConversations } from "@/contexts/conversations-context";
 import { LandingView } from "@/features/landing/landing-view";
 
 const ChatView = dynamic(() => import("@/features/chat/chat-view").then((m) => m.ChatView), {
@@ -9,11 +9,11 @@ const ChatView = dynamic(() => import("@/features/chat/chat-view").then((m) => m
 });
 
 export default function Home() {
-  const [initialQuestion, setInitialQuestion] = useState<string | null>(null);
+  const { activeId, startConversation } = useConversations();
 
-  if (initialQuestion) {
-    return <ChatView initialQuestion={initialQuestion} />;
+  if (activeId) {
+    return <ChatView key={activeId} conversationId={activeId} />;
   }
 
-  return <LandingView onSubmit={setInitialQuestion} />;
+  return <LandingView onSubmit={startConversation} />;
 }

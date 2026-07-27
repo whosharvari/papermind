@@ -5,6 +5,7 @@ import { ThemeProvider } from "next-themes";
 import { useState } from "react";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "@/components/ui/sonner";
+import { ConversationsProvider } from "@/contexts/conversations-context";
 import { SettingsProvider } from "@/contexts/settings-context";
 
 export function Providers({ children }: { children: React.ReactNode }) {
@@ -30,10 +31,12 @@ export function Providers({ children }: { children: React.ReactNode }) {
         disableTransitionOnChange
       >
         <SettingsProvider>
-          <TooltipProvider delayDuration={200}>
-            {children}
-            <Toaster />
-          </TooltipProvider>
+          <ConversationsProvider>
+            <TooltipProvider delayDuration={200}>
+              {children}
+              <Toaster />
+            </TooltipProvider>
+          </ConversationsProvider>
         </SettingsProvider>
       </ThemeProvider>
     </QueryClientProvider>

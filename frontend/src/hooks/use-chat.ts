@@ -13,10 +13,11 @@ function createId(): string {
 
 interface UseChatOptions {
   topK: number;
+  initialMessages?: ChatMessage[];
 }
 
-export function useChat({ topK }: UseChatOptions) {
-  const [messages, setMessages] = useState<ChatMessage[]>([]);
+export function useChat({ topK, initialMessages }: UseChatOptions) {
+  const [messages, setMessages] = useState<ChatMessage[]>(initialMessages ?? []);
   const [isPending, setIsPending] = useState(false);
   // Read inside async callbacks without retriggering them on every keystroke elsewhere.
   const topKRef = useRef(topK);
