@@ -24,7 +24,7 @@ export function ConversationSidebar({
   return (
     <div className="flex h-full flex-col">
       <div className="shrink-0 border-b border-border p-3">
-        <Button variant="outline" size="sm" onClick={onNewChat} className="w-full justify-start gap-2">
+        <Button variant="outline" size="sm" onClick={onNewChat} className="w-full justify-start gap-1.5">
           <MessageSquarePlus className="size-3.5" aria-hidden="true" />
           New chat
         </Button>

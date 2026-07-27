@@ -32,7 +32,7 @@ const STEPS: Step[] = [
 export function PipelineDiagram() {
   return (
     <div
-      className="flex flex-wrap items-stretch justify-center gap-2 overflow-x-auto rounded-2xl border border-border bg-card p-4 sm:gap-1"
+      className="flex flex-wrap items-stretch justify-center gap-2 overflow-x-auto rounded-xl border border-border bg-card p-4 sm:gap-1"
       role="img"
       aria-label="Pipeline: PDF, then Cleaning, Chunking, Embedding, FAISS, Retrieval, Prompt, Groq, Answer"
     >

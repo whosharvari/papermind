@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useCallback, useContext, useEffect, useState } from "react";
+import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
 import { AppSettings, DEFAULT_SETTINGS, SETTINGS_STORAGE_KEY } from "@/types/settings";
 
 interface SettingsContextValue {
@@ -51,11 +51,12 @@ export function SettingsProvider({ children }: { children: React.ReactNode }) {
     }
   }, []);
 
-  return (
-    <SettingsContext.Provider value={{ settings, updateSettings, resetSettings, isHydrated }}>
-      {children}
-    </SettingsContext.Provider>
+  const value = useMemo(
+    () => ({ settings, updateSettings, resetSettings, isHydrated }),
+    [settings, updateSettings, resetSettings, isHydrated],
   );
+
+  return <SettingsContext.Provider value={value}>{children}</SettingsContext.Provider>;
 }
 
 export function useSettings(): SettingsContextValue {

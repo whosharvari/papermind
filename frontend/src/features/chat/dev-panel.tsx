@@ -28,7 +28,7 @@ export function DevPanel({ topK, latencyMs, chunkCount }: DevPanelProps) {
   }
 
   return (
-    <div className="mt-3 rounded-lg border border-dashed border-border bg-muted/30 px-3 py-2">
+    <div className="mt-3 rounded-xl border border-dashed border-border bg-muted/30 px-3 py-2">
       <p className="text-[10px] font-medium tracking-wide text-muted-foreground uppercase">
         Developer info
       </p>

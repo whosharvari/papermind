@@ -30,7 +30,7 @@ export function DesignRationale() {
   return (
     <div className="grid gap-4 sm:grid-cols-2">
       {ITEMS.map((item) => (
-        <div key={item.question} className="rounded-2xl border border-border bg-card p-4">
+        <div key={item.question} className="rounded-xl border border-border bg-card p-4">
           <h3 className="text-sm font-medium text-foreground">{item.question}</h3>
           <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">{item.answer}</p>
         </div>

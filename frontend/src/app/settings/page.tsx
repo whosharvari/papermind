@@ -26,7 +26,7 @@ export default function SettingsPage() {
   const groqModel = stats?.status === "ready" ? shortModelName(stats.groq_model) : undefined;
 
   return (
-    <main className="mx-auto max-w-2xl px-6 py-16">
+    <main className="mx-auto max-w-2xl px-4 py-16 sm:px-6">
       <h1 className="text-2xl font-semibold tracking-tight">Settings</h1>
       <p className="mt-2 text-sm text-muted-foreground">
         Tune how PaperMind retrieves and presents answers. Changes are saved automatically.

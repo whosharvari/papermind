@@ -1,15 +1,10 @@
 "use client";
 
 import { useCallback, useRef, useState } from "react";
+import { createId } from "@/lib/id";
 import { ApiError } from "@/services/api-client";
 import { postQuery } from "@/services/papermind-api";
 import type { ChatMessage } from "@/types/chat";
-
-function createId(): string {
-  return typeof crypto !== "undefined" && "randomUUID" in crypto
-    ? crypto.randomUUID()
-    : `${Date.now()}-${Math.random().toString(36).slice(2)}`;
-}
 
 interface UseChatOptions {
   topK: number;

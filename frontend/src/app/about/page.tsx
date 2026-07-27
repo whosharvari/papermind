@@ -16,7 +16,7 @@ const TECH_STACK = [
 
 export default function AboutPage() {
   return (
-    <main className="mx-auto max-w-4xl px-6 py-16">
+    <main className="mx-auto max-w-4xl px-4 py-16 sm:px-6">
       <h1 className="text-2xl font-semibold tracking-tight">About PaperMind</h1>
       <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
         PaperMind answers questions about a corpus of AI research papers by retrieving the

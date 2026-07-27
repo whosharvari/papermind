@@ -1,19 +1,12 @@
 "use client";
 
 import { Moon, Sun } from "lucide-react";
-import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
+import { useMountedTheme } from "@/hooks/use-mounted-theme";
 
 export function ThemeToggle() {
-  const { resolvedTheme, setTheme } = useTheme();
-  // Icon depends on the resolved theme, which is only known after mount --
-  // rendering a neutral placeholder first avoids a server/client mismatch.
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
-
-  const isDark = mounted && resolvedTheme === "dark";
+  const { mounted, isDark, setTheme } = useMountedTheme();
 
   return (
     <Tooltip>

@@ -35,7 +35,7 @@ const LATENCY_ROWS: { stage: string; median: string }[] = [
 export function EvaluationMetrics() {
   return (
     <div className="flex flex-col gap-6">
-      <div className="overflow-x-auto rounded-2xl border border-border">
+      <div className="overflow-x-auto rounded-xl border border-border">
         <table className="w-full min-w-[560px] text-left text-sm">
           <thead>
             <tr className="border-b border-border bg-muted/40 text-xs text-muted-foreground uppercase">
@@ -64,7 +64,7 @@ export function EvaluationMetrics() {
         small a sample (n=1) to generalize, not padded out to look more complete than it is.
       </p>
 
-      <div className="overflow-hidden rounded-2xl border border-border">
+      <div className="overflow-hidden rounded-xl border border-border">
         <table className="w-full text-left text-sm">
           <thead>
             <tr className="border-b border-border bg-muted/40 text-xs text-muted-foreground uppercase">
@@ -83,7 +83,7 @@ export function EvaluationMetrics() {
         </table>
       </div>
 
-      <div className="rounded-2xl border border-dashed border-border bg-muted/20 p-4">
+      <div className="rounded-xl border border-dashed border-border bg-muted/20 p-4">
         <h3 className="text-sm font-medium text-foreground">A finding worth keeping: chunk-level Hit Rate wasn&apos;t trustworthy</h3>
         <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
           Switching to section-aware chunking made chunk-level Hit Rate look like it collapsed
