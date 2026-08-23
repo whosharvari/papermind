@@ -4,8 +4,8 @@ A Retrieval-Augmented Generation (RAG) question-answering system over a collecti
 research papers. Ask a question in natural language; get an answer grounded in the actual paper
 text, with citations back to the source document and page.
 
-This is a portfolio/learning project built incrementally across several sessions, each adding one
-capability and evaluating it with real measurements rather than assumptions. The `evaluation/`
+Built as a production-style portfolio project focused on reproducibility, evaluation, and grounded retrieval.
+The `evaluation/`
 directory and session-by-session git history are as much a part of the project as the code.
 
 ## Overview
